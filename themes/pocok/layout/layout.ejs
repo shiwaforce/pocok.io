@@ -3,13 +3,15 @@
 <!doctype html>
 <html lang="en">
     <%- partial('_partial/head') %>
-<body class="<%- isIndex ? '' : 'docs' -%>">
-    <% if (!isIndex) { %>
-        <div id="main" class="sidebar">
+    <body class="<%- isIndex ? '' : 'docs' -%>">
+        <%- partial('_partial/header') %>
+
+        <% if (!isIndex) { %>
+        <div id="main" class="container sidebar-fix">
             <%- body %>
         </div>
-    <% } else { %>
-        <%- body %>
-    <% } %>
+        <% } else { %>
+            <%- body %>
+        <% } %>
 </body>
 </html>
