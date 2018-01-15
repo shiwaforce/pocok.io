@@ -1,0 +1,15 @@
+<% var isIndex = page.path === 'index.html' %>
+
+<!doctype html>
+<html lang="en">
+    <%- partial('_partial/head') %>
+<body class="<%- isIndex ? '' : 'docs' -%>">
+    <% if (!isIndex) { %>
+        <div id="main" class="sidebar">
+            <%- body %>
+        </div>
+    <% } else { %>
+        <%- body %>
+    <% } %>
+</body>
+</html>
