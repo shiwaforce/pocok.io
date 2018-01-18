@@ -2,12 +2,12 @@
     <div class="hero__background"></div>
 
     <div class="hero__text-wrap">
-        <p class="hero__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <h2 class="hero__subtitle">Docker missing tool!</h2>
+        <p class="hero__text">Manage docker projects of any complexity with ease!</p>
     </div>
 
     <div class="hero__buttons">
-        <a class="button button--primary" href="/getting-started">Getting Started</a>
-        <a class="button button--secondary" href="/documentation">Documentation</a>
+        <a class="button button--primary" href="/documentation">Getting Started</a>
     </div>
 
     <div class="terminal">
@@ -16,5 +16,84 @@
             <div class="terminal__control terminal__control--hide"></div>
             <div class="terminal__control terminal__control--full"></div>
         </div>
+
+        <div class="terminal-header">
+            <p class="terminal-header__text">
+                <span class="text-red">$</span><span class="text-green">:~ </span><span class="text-blue"> pocok up </span>
+                <span class="terminal-txt-rotate text-orange" data-period="3000"
+                      data-rotate='[ "wordpress", "react", "drupal", "mysql", "django" ]'></span>
+            </p>
+
+            <label class="terminal-label" for="">type to search</label>
+        </div>
+
+        <div class="terminal-logs">
+            <ul class="terminal-logs__list">
+                <li class="terminal-logs__item">pocok_project_1 UP</li>
+                <li class="terminal-logs__item">Attaching to pocok_project_1</li>
+                <li class="terminal-logs__item">Starting pocok_project_1</li>
+                <li class="terminal-logs__item">Creating pocok_project_1 ... done</li>
+                <li class="terminal-logs__item">e423saq78nkl: Pull complete</li>
+            </ul>
+        </div>
     </div>
 </section>
+
+<script>
+    var TxtRotate = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtRotate.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+        }
+
+        setTimeout(function() {
+            that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('terminal-txt-rotate');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-rotate');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+                new TxtRotate(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".terminal-txt-rotate > .wrap { border-right: 0.08em solid rgba(255,255,255,.4) }";
+        document.body.appendChild(css);
+    };
+</script>

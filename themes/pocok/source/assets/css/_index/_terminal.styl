@@ -2,6 +2,7 @@
   background-color #323232
   border-radius 12px
   box-shadow 0 24px 48px rgba(0,0,0,.1)
+  display flex
   height 120px
   max-width 832px
   margin 72px 0 48px
@@ -28,3 +29,66 @@
 
 .terminal__control--full
   background linear-gradient(-180deg, #A4D577 0%, #81C351 100%)
+
+.terminal-header
+  align-items center
+  color #fff
+  display flex
+  padding 48px 24px
+  position relative
+  width 100%
+
+.terminal-header__text
+  font-family 'Roboto Mono', monospace
+  font-size 24px
+
+.text-blue
+  color #93BFCF
+  display: inline-block;
+
+.text-orange
+  color #F5A623
+  display: inline-block;
+
+.text-green
+  color #B8E986
+
+.text-red
+  color #FE766E
+  display: inline-block;
+
+.terminal-label
+  color #fff
+  font-size 12px;
+  opacity .5
+  position absolute
+  right 24px
+  top: 50%
+  transform translate(0,-50%)
+
+.terminal-logs
+  bottom -180px
+  left 48px
+  position absolute
+
+.terminal-logs__list
+  list-style none
+  font-family 'Roboto Mono', monospace
+
+.terminal-logs__item
+  margin 4px 0
+
+.terminal-logs__item:nth-child(1)
+  opacity 1
+
+.terminal-logs__item:nth-child(2)
+  opacity .9
+
+.terminal-logs__item:nth-child(3)
+  opacity .6
+
+.terminal-logs__item:nth-child(4)
+  opacity .3
+
+.terminal-logs__item:nth-child(5)
+  opacity .1
