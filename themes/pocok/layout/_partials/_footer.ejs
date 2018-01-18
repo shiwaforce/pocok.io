@@ -1,0 +1,29 @@
+<script>
+    setTimeout(function () {
+        var assets = {
+            css: ['/assets/css/fonts.css']
+        };
+
+        function loadAssets(files, v) {
+            if (files && files.length) {
+                window[v] = files.length;
+                for (var i = 0; i < files.length; i++) {
+                    var d = document, e = d.createElement('link');
+                    e.setAttribute('href', files[i]);
+                    e.setAttribute('rel', 'stylesheet');
+                    e.setAttribute('type', 'text/css');
+                    e.onload = function () {
+                        if (!--window[v]) {
+                            var ev = document.createEvent('Event');
+                            ev.initEvent('cssLoaded');
+                            document.body.dispatchEvent(ev);
+                        }
+                    };
+                    e.onerror = e.onload;
+                    d.getElementsByTagName('head')[0].appendChild(e);
+                }
+            }
+        }
+        loadAssets(assets.css, 'cssLoaderRemainFiles');
+    });
+</script>

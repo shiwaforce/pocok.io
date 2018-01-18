@@ -2,9 +2,9 @@
 
 <!doctype html>
 <html lang="en">
-    <%- partial('_partial/head') %>
+    <%- partial('_partials/_head', { homePage: isIndex }) %>
     <body class="<%- isIndex ? '' : 'docs' -%>">
-        <%- partial('_partial/header') %>
+        <%- partial('_partials/_header', { homePage: isIndex }) %>
 
         <% if (!isIndex) { %>
         <div id="main" class="container sidebar-fix">
@@ -13,5 +13,7 @@
         <% } else { %>
             <%- body %>
         <% } %>
-</body>
+
+        <%- partial('_partials/_footer') %>
+    </body>
 </html>

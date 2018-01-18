@@ -8,5 +8,9 @@
     <% if (theme.favicon){ %>
     <link rel="icon" href="<%- theme.favicon %>">
     <% } %>
-    <%- css('css/style') %>
+    <% if (homePage) { %>
+        <%- css('/assets/css/index') %>
+    <% } else { %>
+        <%- css('/assets/css/page') %>
+    <% } %>
 </head>
