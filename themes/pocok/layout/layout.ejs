@@ -11,9 +11,13 @@
             <%- body %>
         </div>
         <% } else { %>
-            <%- body %>
+            <%- partial('_index/_hero') %>
+            <%- partial('_index/_features') %>
         <% } %>
 
+        <% if (isIndex) { %>
         <%- partial('_partials/_footer') %>
+        <script src="/assets/js/terminal.js"></script>
+        <% } %>
     </body>
 </html>

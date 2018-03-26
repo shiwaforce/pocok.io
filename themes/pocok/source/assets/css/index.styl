@@ -1,9 +1,19 @@
 @import "_variables.styl"
 @import "_reset.styl"
 @import "_partials/_header.styl"
+@import "_partials/_footer.styl"
+@import "_partials/_container.styl"
 @import "_partials/_main-nav.styl"
 @import "_index/_hero.styl"
-@import "_index/_hero-text.styl"
 @import "_index/_features.styl"
 @import "_index/_terminal.styl"
 @import "_index/_hero-buttons.styl"
+
+body.home
+  background-image url(/assets/images/hero-background.svg)
+  background-position 101% 0
+  background-repeat no-repeat
+  background-size 50%
+
+  @media $medium
+    background-size 50%

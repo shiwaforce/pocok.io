@@ -2,20 +2,42 @@
   align-items center
   display flex
   flex-direction column
-  height 100vh
-  justify-content flex-end
-  min-height 780px
-  padding 72px 48px 216px
+  justify-content center
+  padding 120px 0 192px
   position relative
 
-.hero__background
-  background-image url(/assets/images/background.svg)
-  background-position bottom center
-  background-repeat no-repeat
-  background-size cover
-  height calc(100% - 216px)
-  left 0
-  position absolute
-  top 0
+  @media $medium
+    height 100vh
+    min-height 640px
+    padding 72px 0
+
+.hero__container
+  display flex
+  flex-wrap wrap
+
+.hero__col
   width 100%
-  z-index -1
+
+  @media $large
+    width 50%
+
+.hero__col:first-child
+  @media $large
+    padding-right 72px
+
+.hero__col:last-child
+  @media $large
+    padding-left 24px
+
+
+.hero__title
+  font-size 24px
+  margin 0 0 6px
+
+  @media $medium
+    font-size 36px
+
+.hero__text
+  @media $medium
+    font-size 18px
+    line-height 32px

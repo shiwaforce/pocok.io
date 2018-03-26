@@ -1,99 +1,36 @@
 <section class="hero">
     <div class="hero__background"></div>
-
-    <div class="hero__text-wrap">
-        <h2 class="hero__subtitle">Docker missing tool!</h2>
-        <p class="hero__text">Manage docker projects of any complexity with ease!</p>
-    </div>
-
-    <div class="hero__buttons">
-        <a class="button button--primary" href="/documentation">Getting Started</a>
-    </div>
-
-    <div class="terminal">
-        <div class="terminal__controls">
-            <div class="terminal__control terminal__control--close"></div>
-            <div class="terminal__control terminal__control--hide"></div>
-            <div class="terminal__control terminal__control--full"></div>
+    <div class="hero__container container">
+        <div class="hero__col">
+            <h1 class="hero__title">Pocok</h1>
+            <p class="hero__text">Pocok will help you to organise and manage Docker, Docker-Compose,
+                Kubernetes projects of any complexity using simple YAML config files
+                to shorten the route from finding your project to initialising it in your local environment.</p>
+            <div class="hero__buttons">
+                <a class="hero__button hero__button--primary" href="https://github.com/shiwaforce/pocok" target="_blank" rel="noopener">Get Started</a>
+            </div>
         </div>
+        <div class="hero__col">
+            <div class="terminal">
+                <div class="terminal__controls">
+                    <div class="terminal__control terminal__control--close"></div>
+                    <div class="terminal__control terminal__control--hide"></div>
+                    <div class="terminal__control terminal__control--full"></div>
+                </div>
 
-        <div class="terminal-header">
-            <p class="terminal-header__text">
-                <span class="text-red">$</span><span class="text-green">:~ </span><span class="text-blue"> pocok up </span>
-                <span class="terminal-txt-rotate text-orange" data-period="3000"
-                      data-rotate='[ "wordpress", "react", "vue", "gitlab", "jenkins", "loopback", "tensorflow", "react-native", "elastic-search", "drupal", "mysql", "django" ]'></span>
-            </p>
+                <div class="terminal-header">
+                    <p class="terminal-header__text">
+                        <span class="text-red">$</span><span class="text-green">:~ </span><span class="text-blue"> pocok </span>
+                        <span class="terminal-txt-rotate text-blue" data-period="2000"
+                              data-rotate='[ "init my-project", "up my-project", "project add my-project", "project ls" ]'></span>
+                    </p>
+                </div>
 
-            <label class="terminal-label" for="">type to search</label>
-        </div>
-
-        <div class="terminal-logs">
-            <ul class="terminal-logs__list">
-                <li class="terminal-logs__item">pocok_project_1 UP</li>
-                <li class="terminal-logs__item">Attaching to pocok_project_1</li>
-                <li class="terminal-logs__item">Starting pocok_project_1</li>
-                <li class="terminal-logs__item">Creating pocok_project_1 ... done</li>
-                <li class="terminal-logs__item">e423saq78nkl: Pull complete</li>
-            </ul>
+                <div class="terminal-logs">
+                    <ul id="terminal-logs" class="terminal-logs__list">
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </section>
-
-<script>
-    var TxtRotate = function(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-    };
-
-    TxtRotate.prototype.tick = function() {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
-
-        if (this.isDeleting) {
-            this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-            this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
-
-        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-        var that = this;
-        var delta = 200 - Math.random() * 100;
-
-        if (this.isDeleting) { delta /= 2; }
-
-        if (!this.isDeleting && this.txt === fullTxt) {
-            delta = this.period;
-            this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-            this.isDeleting = false;
-            this.loopNum++;
-            delta = 500;
-        }
-
-        setTimeout(function() {
-            that.tick();
-        }, delta);
-    };
-
-    window.onload = function() {
-        var elements = document.getElementsByClassName('terminal-txt-rotate');
-        for (var i=0; i<elements.length; i++) {
-            var toRotate = elements[i].getAttribute('data-rotate');
-            var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-                new TxtRotate(elements[i], JSON.parse(toRotate), period);
-            }
-        }
-        // INJECT CSS
-        var css = document.createElement("style");
-        css.type = "text/css";
-        css.innerHTML = ".terminal-txt-rotate > .wrap { border-right: 0.08em solid rgba(255,255,255,.4) }";
-        document.body.appendChild(css);
-    };
-</script>

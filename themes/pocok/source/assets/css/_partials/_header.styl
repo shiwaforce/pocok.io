@@ -1,19 +1,39 @@
 .header
   box-shadow 0 0 48px rgba(0,0,0,.1)
-  padding 24px
+  padding 12px
   position relative
   width 100%
 
-.home .header
+  @media $medium
+    padding 12px 24px
+
+.header.header--home
   box-shadow none
   left 0
+  padding 24px 12px
   position absolute
   top 0
   z-index 1
 
+  @media $medium
+    padding 24px
+
 .header__grid
+  align-items center
   display flex
   justify-content space-between
 
 .header__col
   min-height 1px
+
+.header__logo
+  display block
+  height 48px
+  width 96px
+
+.header--home .header__logo
+  height auto
+  width 120px
+
+  @media $medium
+    width 144px

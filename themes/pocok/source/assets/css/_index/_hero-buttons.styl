@@ -1,26 +1,32 @@
 .hero__buttons
   display flex
   margin 0
+  padding 24px 0 0
 
-.button
+.hero__button
   align-items center
   border-radius 24px
   display flex
-  font-size 14px
+  font-size 16px
   height 48px
   justify-content center
   line-height 48px
-  margin 0 12px
+  margin 0
   text-align center
   text-decoration none
   width 172px
 
-.button--primary
-  background-color rgba(255,255,255,.8)
-  border solid 2px rgba(255, 255, 255, 0.1)
-  color #333
+.hero__button + .hero__button
+  margin-left 12px
+
+.hero__button--primary
+  background-image linear-gradient(to right, #3fbfde, #4ea1e1)
+  border-radius 30px
+  color #fff
   font-weight bold
 
-.button--secondary
-  border solid 2px #fff
-  color #fff
+.hero__button--secondary
+  background-color #e3f0fe
+  border-radius 30px
+  color #4da3e1
+  font-weight bold
