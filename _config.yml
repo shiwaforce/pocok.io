@@ -77,8 +77,3 @@ deploy:
 
 stylus:
   compress: true
-  sourcemaps:
-    comment: flase
-    inline: false
-    sourceRoot: ''
-    basePath: .
