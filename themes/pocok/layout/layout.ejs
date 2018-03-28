@@ -16,8 +16,27 @@
         <% } %>
 
         <% if (isIndex) { %>
-        <%- partial('_partials/_footer') %>
-        <script src="/assets/js/terminal.js"></script>
+            <%- partial('_partials/_footer') %>
+            <script>
+                $(function () {
+                    var typewriter = new Typewriter($("#terminal"));
+                    typewriter.setCaret("|");
+                    typewriter.setCaretPeriod(500);
+                    typewriter.setDelay(150, 50);
+
+                    typewriter.setFinalCallback( function() {
+                        $('#terminal').contents()
+                            .filter(function() {
+                                return this.nodeType == 3;
+                            }).remove();
+                        var textNode = typewriter._textNode = document.createTextNode("")
+                        $('#terminal').prepend(textNode);
+                        animate(typewriter);
+                    });
+
+                    animate(typewriter);
+                });
+            </script>
         <% } %>
     </body>
 </html>

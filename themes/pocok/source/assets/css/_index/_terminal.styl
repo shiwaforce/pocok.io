@@ -3,13 +3,13 @@
   border-radius 12px
   box-shadow 0 24px 48px rgba(0,0,0,.1)
   display flex
-  height 72px
-  margin 24px 0 0
+  height 168px
+  padding 32px 24px
   position relative
   width 100%
 
   @media $medium
-    height 96px
+    height 288px
 
 .terminal__controls
   display flex
@@ -33,80 +33,16 @@
   background linear-gradient(-180deg, #A4D577 0%, #81C351 100%)
 
 .terminal-header
-  align-items center
+  align-items flex-end
   color #fff
   display flex
-  padding 24px 24px 12px
+  overflow hidden
+  padding 0
   position relative
   width 100%
 
-  @media $medium
-    padding 48px 24px
-
-.terminal-header__text
+.terminal__text
+  color #9ccc65
   font-family 'Roboto Mono', monospace
-  font-size 14px
-
-  @media $medium
-    font-size 18px
-
-.text-blue
-  color #93BFCF
-  display: inline-block;
-
-.text-orange
-  color #F5A623
-  display: inline-block;
-
-.text-green
-  color #B8E986
-
-.text-red
-  color #FE766E
-  display: inline-block;
-
-.terminal-label
-  color #fff
-  font-size 12px;
-  opacity .5
-  position absolute
-  right 24px
-  top: 50%
-  transform translate(0,-50%)
-
-.terminal-logs
-  bottom -168px
-  font-size 12px
-  height 160px
-  left 0
-  overflow hidden
-  position absolute
-
-  @media $medium
-    font-size 14px
-    left 24px
-
-.terminal-logs__list
-  list-style none
-  font-family 'Roboto Mono', monospace
-
-.terminal-logs__item
-  margin 4px 0
-
-.terminal-logs__item:nth-child(1)
-  opacity 1
-
-.terminal-logs__item:nth-child(2)
-  opacity .9
-
-.terminal-logs__item:nth-child(3)
-  opacity .6
-
-.terminal-logs__item:nth-child(4)
-  opacity .3
-
-.terminal-logs__item:nth-child(5)
-  opacity .1
-
-.terminal-logs__item:nth-child(n+6)
-  opacity 0
+  min-height 100%
+  white-space pre
