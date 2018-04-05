@@ -3,7 +3,7 @@
         <div class="footer__container container">
             <% if (homePage) { %>
             <div class="footer__col">
-                <a class="footer__container-link" href="/documentation" target="_blank" rel="noopener">
+                <a class="footer__container-link" href="/documentation">
                     <div class="footer__container-icon">
                         <img src="/assets/images/icon-docs.svg" alt="">
                     </div>
@@ -42,8 +42,34 @@
         <div class="container">
             <div class="footer__row">
                 <p>Released under the <a class="footer__link" href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT License</a></p>
-                <p>2018. <a class="footer__link" href="https://shiwaforce.com" target="_blank" rel="noopener">Shiwaforce.com</a></p>
+                <p>Brought you with ❤️ by <a class="footer__link" href="https://shiwaforce.com" target="_blank" rel="noopener">Shiwaforce.com</a></p>
             </div>
         </div>
     </div>
 </footer>
+
+<% if (!homePage) { %>
+<script>
+  function toggleClass(element, className){
+    if (!element || !className){
+      return;
+    }
+
+    var classString = element.className, nameIndex = classString.indexOf(className);
+    if (nameIndex === -1) {
+      classString += ' ' + className;
+    }
+    else {
+      classString = classString.substr(0, nameIndex) + classString.substr(nameIndex+className.length);
+    }
+    element.className = classString;
+  }
+
+  document.getElementById('toggle-button').addEventListener('click', function() {
+    toggleClass(document.getElementById('sidebar'), 'is-opened');
+  });
+  document.getElementById('sidebar-close').addEventListener('click', function() {
+    toggleClass(document.getElementById('sidebar'), 'is-opened');
+  });
+</script>
+<% } %>

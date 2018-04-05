@@ -1,6 +1,6 @@
 .header
   box-shadow 0 0 48px rgba(0,0,0,.1)
-  padding 12px
+  padding 12px 0
   position relative
   width 100%
 
@@ -10,13 +10,12 @@
 .header.header--home
   box-shadow none
   left 0
-  padding 24px 12px
   position absolute
   top 0
   z-index 1
 
   @media $medium
-    padding 24px
+    padding 24px 0
 
 .header__grid
   align-items center
@@ -29,11 +28,34 @@
 .header__logo
   display block
   height 48px
-  width 96px
+  width 100px
+
+  @media $medium
+    width 96px
 
 .header--home .header__logo
   height auto
-  width 120px
+  width 100px
 
   @media $medium
     width 144px
+
+.header__logo svg
+  height 100%
+  width 100%
+
+.header__logo-label
+  @media (max-width: 639px)
+    display none
+
+.header__sidebar-toggle
+  align-items center
+  appearance none
+  background none
+  border none
+  color inherit
+  cursor pointer
+  display flex
+
+  @media $medium
+    display none

@@ -1,21 +1,22 @@
 h1
   font-size 27px
   line-height 36px
-  margin 0 0 40px
+  margin 0 0 20px
 
   @media $medium
     font-size 40px
     line-height 48px
+    margin 0 0 40px
 
 h2
-  font-weight normal
   font-size 22px
   line-height 28px
-  margin 20px 0 40px
+  margin 20px 0 0
 
   @media $medium
     font-size 28px
     line-height 48px
+    margin 40px 0 0
 
   @media $large
     font-size 32px
@@ -23,7 +24,7 @@ h2
 h3
   font-size 16px
   line-height 24px
-  margin 10px 0 20px
+  margin 20px 0 0
 
   @media $medium
     font-size 20px
@@ -32,15 +33,23 @@ h3
     font-size 21px
     line-height 36px
 
-h4,
+h4
+  font-size 14px
+  line-height 24px
+  margin 20px 0 0
+
 p
   font-size 14px
   line-height 24px
-  margin 10px 0 20px
 
-h4:last-child,
-p:last-child
-  margin-bottom 0
+p + p
+  margin-top 10px
+
+  @media $medium
+    margin-top 20px
+
+ul
+  padding 0 0 0 20px
 
 small
   font-size 12px
@@ -59,6 +68,12 @@ code
   margin: 0 2px
   padding: 3px 5px
   white-space: nowrap
+
+a
+  color #5B85E7
+
+a:hover
+  text-decoration none
 
 .highlight
   background-color: #f8f8f8
@@ -86,10 +101,19 @@ code
     .line
       min-height: 1.5em
 
+.table-wrap
+  overflow-x auto
+  width 100%
+
 table
   border-collapse collapse
   margin 0 0 20px
-  width 100%
+  min-width 720px
+  width auto
+
+  @media $medium
+    min-width 100%
+    width 100%
 
 tr:nth-child(2n) td
   background-color rgba(0,0,0,.05)
