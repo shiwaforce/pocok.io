@@ -7,7 +7,7 @@
         <%- partial('_partials/_header', { homePage: isIndex }) %>
 
         <% if (!isIndex) { %>
-        <div id="main" class="container sidebar-fix">
+        <div id="main" class="container container--sidebar">
             <%- body %>
         </div>
         <% } else { %>
@@ -15,8 +15,9 @@
             <%- partial('_index/_features') %>
         <% } %>
 
+        <%- partial('_partials/_footer', { homePage: isIndex }) %>
+
         <% if (isIndex) { %>
-            <%- partial('_partials/_footer') %>
             <script>
                 $(function () {
                     var typewriter = new Typewriter($("#terminal"));

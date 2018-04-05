@@ -1,8 +1,9 @@
 <footer class="footer">
     <div class="footer__content-top">
         <div class="footer__container container">
+            <% if (homePage) { %>
             <div class="footer__col">
-                <a class="footer__container-link" href="https://github.com/shiwaforce/pocok" target="_blank" rel="noopener">
+                <a class="footer__container-link" href="/documentation" target="_blank" rel="noopener">
                     <div class="footer__container-icon">
                         <img src="/assets/images/icon-docs.svg" alt="">
                     </div>
@@ -12,6 +13,7 @@
                     </div>
                 </a>
             </div>
+            <% } %>
             <div class="footer__col">
                 <a class="footer__container-link" href="https://github.com/shiwaforce/pocok/releases" target="_blank" rel="noopener">
                     <div class="footer__container-icon">
@@ -40,38 +42,8 @@
         <div class="container">
             <div class="footer__row">
                 <p>Released under the <a class="footer__link" href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT License</a></p>
-                <p>Copyright © 2018. <a class="footer__link" href="https://shiwaforce.com" target="_blank" rel="noopener">Shiwaforce.com</a></p>
+                <p>2018. <a class="footer__link" href="https://shiwaforce.com" target="_blank" rel="noopener">Shiwaforce.com</a></p>
             </div>
         </div>
     </div>
 </footer>
-
-<script>
-    setTimeout(function () {
-        var assets = {
-            css: ['/assets/css/fonts.css']
-        };
-
-        function loadAssets(files, v) {
-            if (files && files.length) {
-                window[v] = files.length;
-                for (var i = 0; i < files.length; i++) {
-                    var d = document, e = d.createElement('link');
-                    e.setAttribute('href', files[i]);
-                    e.setAttribute('rel', 'stylesheet');
-                    e.setAttribute('type', 'text/css');
-                    e.onload = function () {
-                        if (!--window[v]) {
-                            var ev = document.createEvent('Event');
-                            ev.initEvent('cssLoaded');
-                            document.body.dispatchEvent(ev);
-                        }
-                    };
-                    e.onerror = e.onload;
-                    d.getElementsByTagName('head')[0].appendChild(e);
-                }
-            }
-        }
-        loadAssets(assets.css, 'cssLoaderRemainFiles');
-    });
-</script>
