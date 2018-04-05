@@ -5,7 +5,7 @@
     <head>
     <meta charset="utf-8">
     
-    <title> 🐭 Pocok.io</title>
+    <title>Overview —  🐭 Pocok.io</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Pocok helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
     <meta property="og:type" content="website">
@@ -23,14 +23,11 @@
     <link rel="icon" href="/assets/images/favicon.png">
     
     
-        <link rel="stylesheet" href="/assets/css/index.css">
-        <script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
-        <script src="/assets/js/typewriter.js"></script>
-        <script src="/assets/js/animate.js"></script>
+        <link rel="stylesheet" href="/assets/css/page.css">
     
 </head>
-    <body class="🐭 home">
-        <header id="header" class="header header--home">
+    <body class="🐭 ">
+        <header id="header" class="header header--white">
   <div class="container">
     <div class="header__grid">
       <div class="header__col">
@@ -84,133 +81,88 @@
           </ul>
         </nav>
         
+        <button id="toggle-button" class="header__sidebar-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        
       </div>
     </div>
   </div>
 </header>
 
         
-            <section class="hero">
-    <div class="hero__background"></div>
-    <div class="hero__container container">
-        <div class="hero__col">
-            <h1 class="hero__title">Pocok</h1>
-            <p class="hero__text">Pocok will help you to organise and manage Docker, Docker-Compose,
-                Kubernetes projects of any complexity using simple YAML config files
-                to shorten the route from finding your project to initialising it in your local environment.</p>
-            <div class="hero__buttons">
-                <a class="hero__button hero__button--primary" href="/documentation/install">Get Started</a>
-                <a class="hero__button hero__button--secondary" href="/documentation">Documentation</a>
-            </div>
-        </div>
-        <div class="hero__col">
-            <div class="terminal">
-                <div class="terminal__controls">
-                    <div class="terminal__control terminal__control--close"></div>
-                    <div class="terminal__control terminal__control--hide"></div>
-                    <div class="terminal__control terminal__control--full"></div>
-                </div>
-
-                <div class="terminal-header">
-                    <p id="terminal" class="terminal__text"></p>
-                </div>
-            </div>
-        </div>
+        <div id="main" class="container container--sidebar">
+            
+<aside id="sidebar" class="sidebar">
+    <div class="sidebar__group">
+        <h3 class="sidebar__group-title">Getting Started</h3>
+        <ul class="sidebar__list">
+            <li class="sidebar__list-item">
+                <a class="sidebar__link" href="/documentation">Overview</a>
+            </li>
+            <li class="sidebar__list-item">
+                <a class="sidebar__link" href="/documentation/install">Install</a>
+            </li>
+        </ul>
     </div>
-</section>
 
-            <section class="features">
-    <div class="container">
-        <h1 class="features__title">Features</h1>
-        <div class="features__row">
-            <div class="features__item features__item--1-4">
-                <div class="features__item-panel">
-                    <div class="features__item-icon">
-                        <img src="/assets/images/icon-docker.jpg" alt="">
-                    </div>
-                    <h3 class="features__item-title">Docker and Docker Compose</h3>
-                    <p>Docker and Docker Compose are deeply integrated into Pocok making it much easier to use.</p>
-                </div>
-            </div>
-            <div class="features__item features__item--1-4">
-                <div class="features__item-panel">
-                    <div class="features__item-icon">
-                        <img src="/assets/images/icon-kubernetes.jpg" alt="">
-                    </div>
-                    <h3 class="features__item-title">Kubernetes</h3>
-                    <p>Automate deployment, scale, and management of containerized applications with Kubernetes without leaving Pocok.</p>
-                </div>
-            </div>
-            <div class="features__item features__item--1-4">
-                <div class="features__item-panel">
-                    <div class="features__item-icon">
-                        <img src="/assets/images/icon-helm.jpg" alt="">
-                    </div>
-                    <h3 class="features__item-title">Helm</h3>
-                    <p>Pocok will let you manage Kubernetes applications with Helm. Define, install, and upgrade Kubernetes applications of any complexity.</p>
-                </div>
-            </div>
-            <div class="features__item features__item--1-4">
-                <div class="features__item-panel">
-                    <div class="features__item-icon">
-                        <img src="/assets/images/icon-git.jpg" alt="">
-                    </div>
-                    <h3 class="features__item-title">Version Control</h3>
-                    <p>Git and SVN are supported.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="features__row">
-            <div class="features__item features__item--icon-left features__item--1-3">
-                <div class="features__item-icon">
-                    <img src="/assets/images/icon-arrows.svg" alt="">
-                </div>
-                <h3 class="features__item-title">Simple, Flexible, Scalable</h3>
-                <p>Configure, run and switch between projects with a very simple command line interface.</p>
-            </div>
-            <div class="features__item features__item--icon-left features__item--1-3">
-                 <div class="features__item-icon">
-                     <img src="/assets/images/icon-env.svg" alt="">
-                 </div>
-                 <h3 class="features__item-title">Multiple Plans</h3>
-                 <p>Create multiple plans for different use cases like development, demonstration, production, etc.</p>
-            </div>
-            <div class="features__item features__item--icon-left features__item--1-3">
-                <div class="features__item-icon">
-                    <img src="/assets/images/icon-keyboard.svg" alt="">
-                </div>
-                 <h3 class="features__item-title">Script Support (Hooks)</h3>
-                <p>Run additional scripts with hooks any time.</p>
-            </div>
-            <div class="features__item features__item--icon-left features__item--1-3">
-                <div class="features__item-icon">
-                    <img src="/assets/images/icon-catalog.svg" alt="">
-                </div>
-                 <h3 class="features__item-title">Projects, Catalogs</h3>
-                <p>Manage as many projects as you need, organize them into catalogs. Share catalogs between different teams or organisations.</p>
-            </div>
-
-        </div>
+    <div class="sidebar__group">
+        <h3 class="sidebar__group-title">CLI</h3>
+        <ul class="sidebar__list">
+            <li class="sidebar__list-item">
+                <a class="sidebar__link" href="/documentation/cli/pocok">Pocok</a>
+            </li>
+            <li class="sidebar__list-item">
+                <a class="sidebar__link" href="/documentation/cli/pocok-project">Pocok Project</a>
+            </li>
+            <li class="sidebar__list-item">
+                <a class="sidebar__link" href="/documentation/cli/pocok-repo">Pocok Repo</a>
+            </li>
+        </ul>
     </div>
-</section>
+
+    <button id="sidebar-close" class="sidebar__close"></button>
+</aside>
+
+<main class="main">
+    <div class="content">
+        <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Pocok helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.</p>
+<ul>
+<li>Simple. Configure, run and switch between projects with a very simple command line interface.</li>
+<li>Flexibility. Manage, scale, maintain projects of any complexity with ease.</li>
+<li>Configure Once, Use Everywhere. Configure project once so the rest of your team will feel the value of zero configuration.</li>
+</ul>
+<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><ul>
+<li>Docker, Docker-Compose, Kubernetes, Helm support out of the box.</li>
+<li>Git, SVN support out of the box.</li>
+<li>Project Catalog, Multiple Catalogues. Create your own project catalog. Organise and your projects without additional tools.</li>
+<li>Multiple Plans. Create multiple plans for different environments or even environments for demo purposes. Switch between plans (environments) with ease.</li>
+<li>Simple Config Files. Pocok helps to split config files, so it is easy to maintain and scale them any time.</li>
+<li>Script Support (Hooks). Add additional scripts any time.   </li>
+</ul>
+<h3 id="Pocok-Project"><a href="#Pocok-Project" class="headerlink" title="Pocok Project"></a>Pocok Project</h3><p>Pocok project is basically git/svn project. Each Pocok Project should have <code>pocok.yaml</code> file and at least one <code>docker-compose.yaml</code> file.<br><code>pocok.yaml</code> example:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">version: &apos;1.0&apos;</span><br><span class="line">maintainer: &apos;operations@shiwaforce.com&apos;</span><br><span class="line"></span><br><span class="line">environment:</span><br><span class="line">  include: docker/conf.env</span><br><span class="line"></span><br><span class="line">plan:</span><br><span class="line">  demo:</span><br><span class="line">    - docker/dc-nginx.yaml # - docker-compose file </span><br><span class="line">    - docker/dc-mysql-demo.yaml # - docker-compose file</span><br><span class="line">    - docker/dc-node.yaml # - docker-compose file</span><br><span class="line">    - docker/dc-phpmyadmin.yaml # - docker-compose file</span><br><span class="line">  dev:</span><br><span class="line">    - docker/dc-nginx.yaml # - docker-compose file</span><br><span class="line">    - docker/dc-mysql-dev.yaml # - docker-compose file</span><br><span class="line">    - docker/dc-node.yaml # - docker-compose file</span><br><span class="line">    - docker/dc-phpmyadmin.yaml # - docker-compose file</span><br></pre></td></tr></table></figure></p>
+<h3 id="Pocok-Plan"><a href="#Pocok-Plan" class="headerlink" title="Pocok Plan"></a>Pocok Plan</h3><p>With Pocok plans you can configure multiple environments (development, production, demo, etc.) in your project<br>keeping configuration small, easy scalable, maintainable and reusable. </p>
+<h4 id="Use-Cases"><a href="#Use-Cases" class="headerlink" title="Use Cases:"></a>Use Cases:</h4><ul>
+<li>useful for large scalable projects or with projects with big number of micro services.</li>
+<li>configure plans (environments) for different groups of developers, so they will be able to run only required services/containers keeping low usage of working machine resources.</li>
+<li>configure plans for demo purposes with predefined content, so any one in your team could demonstrate any project to the client with easy.</li>
+</ul>
+<h3 id="Pocok-Repo"><a href="#Pocok-Repo" class="headerlink" title="Pocok Repo."></a>Pocok Repo.</h3><p>Pocok Repo - is a collection of Pocok Projects.<br>With the help of Pocok Repo you will be able to organise and manage your projects in a simple way.<br>Pocok Repo example:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">my-project-1:</span><br><span class="line">  file: pocok.yaml</span><br><span class="line">  git: ssh://git@git-server.com/my-project-1</span><br><span class="line">my-project-2:</span><br><span class="line">  file: pocok.yaml</span><br><span class="line">  git: ssh://git@git-server.com/my-project-2</span><br></pre></td></tr></table></figure></p>
+<h3 id="Pocok-Catalog"><a href="#Pocok-Catalog" class="headerlink" title="Pocok Catalog"></a>Pocok Catalog</h3><p>Pocok Catalog - is a collection of Pocok Repos. Add multiple Pocok Repos form same or different resources.</p>
+
+    </div>
+</main>
+        </div>
         
 
         <footer class="footer">
     <div class="footer__content-top">
         <div class="footer__container container">
-            
-            <div class="footer__col">
-                <a class="footer__container-link" href="/documentation">
-                    <div class="footer__container-icon">
-                        <img src="/assets/images/icon-docs.svg" alt="">
-                    </div>
-                    <div>
-                        <h4 class="footer__title">Read The Docs</h4>
-                        <p>Get additional information</p>
-                    </div>
-                </a>
-            </div>
             
             <div class="footer__col">
                 <a class="footer__container-link" href="https://github.com/shiwaforce/pocok/releases" target="_blank" rel="noopener">
@@ -247,28 +199,31 @@
 </footer>
 
 
+<script>
+  function toggleClass(element, className){
+    if (!element || !className){
+      return;
+    }
 
-        
-            <script>
-                $(function () {
-                    var typewriter = new Typewriter($("#terminal"));
-                    typewriter.setCaret("|");
-                    typewriter.setCaretPeriod(500);
-                    typewriter.setDelay(150, 50);
+    var classString = element.className, nameIndex = classString.indexOf(className);
+    if (nameIndex === -1) {
+      classString += ' ' + className;
+    }
+    else {
+      classString = classString.substr(0, nameIndex) + classString.substr(nameIndex+className.length);
+    }
+    element.className = classString;
+  }
 
-                    typewriter.setFinalCallback( function() {
-                        $('#terminal').contents()
-                            .filter(function() {
-                                return this.nodeType == 3;
-                            }).remove();
-                        var textNode = typewriter._textNode = document.createTextNode("")
-                        $('#terminal').prepend(textNode);
-                        animate(typewriter);
-                    });
+  document.getElementById('toggle-button').addEventListener('click', function() {
+    toggleClass(document.getElementById('sidebar'), 'is-opened');
+  });
+  document.getElementById('sidebar-close').addEventListener('click', function() {
+    toggleClass(document.getElementById('sidebar'), 'is-opened');
+  });
+</script>
 
-                    animate(typewriter);
-                });
-            </script>
+
         
     </body>
 </html>
