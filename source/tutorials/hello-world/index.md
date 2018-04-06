@@ -149,5 +149,17 @@ $:~ pocok repo push
 ```
  
 
-### Conclusion  
-In this tutorial we created simple hello world pocok project.
+#### Pocok Hello World Example Project   
+You can try Pocok Hello World Example project. Just add Pocok Repo:
+```
+$:~ pocok repo add default https://github.com/shiwaforce/pocok-examples.git
+```
+List out all available projects:
+```
+$:~ pocok porject ls
+```
+
+Run Pocok Hello World Project:
+```
+$:~ pocok up pocok-example-hello-world
+```
