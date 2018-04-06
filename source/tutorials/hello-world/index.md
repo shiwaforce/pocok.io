@@ -152,7 +152,7 @@ $:~ pocok repo push
 #### Pocok Hello World Example Project   
 You can try Pocok Hello World Example project. Just add Pocok Repo:
 ```
-$:~ pocok repo add default https://github.com/shiwaforce/pocok-examples.git
+$:~ pocok repo add pocok-examples https://github.com/shiwaforce/pocok-examples.git
 ```
 List out all available projects:
 ```
