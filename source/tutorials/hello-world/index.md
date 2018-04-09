@@ -156,7 +156,7 @@ $:~ pocok repo add pocok-examples https://github.com/shiwaforce/pocok-examples.g
 ```
 List out all available projects:
 ```
-$:~ pocok projects ls
+$:~ pocok project ls
 ```
 
 Run Pocok Hello World Project:
