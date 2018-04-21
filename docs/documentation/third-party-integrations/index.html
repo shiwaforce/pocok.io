@@ -5,7 +5,7 @@
     <head>
     <meta charset="utf-8">
     
-    <title>Pocok.io</title>
+    <title>Third Party Integrations — Pocok.io</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Pocok helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
     <meta property="og:type" content="website">
@@ -143,71 +143,18 @@
 
 <main class="main">
     <div class="content">
-        <h1 id="Pocok-Repo"><a href="#Pocok-Repo" class="headerlink" title="Pocok Repo"></a>Pocok Repo</h1>
-<div class="table-wrap">
-  <table>
-    <thead>
-    <tr>
-      <th width="40%"><b>Command</b></th>
-      <th width="60%"><b>Description</b></th>
-    </tr>
-    <thead>
-    <tbody>
-    <tr>
-      <td><b><code>pocok repo init</code></b></td>
-      <td>
-        <p>Initialize default environment and sample catalog.</p>
-      </td>
-    </tr>
-    <tr>
-      <td><b><code>pocok repo (add|modify) &lt;name&gt; &lt;git-url&gt; <br> [&lt;branch&gt;] [&lt;file&gt;]</code></b></td>
-      <td>
-        <p>Add new repo to catalog or modify existing one.</p>
-        <p><code>&lt;name&gt;</code> - Name of the catalogue.</p>
-        <p><code>&lt;git-url&gt;</code> - URL of catalog's GIT repository.</p>
-        <p><code>[&lt;branch&gt;]</code> - Name of the branch that should be checked out. (default : master).</p>
-        <p><code>[&lt;file&gt;]</code> - Name of the catalog file in the repository. (default: poco-catalog.yml).</p>
-      </td>
-    </tr>
-    <tr>
-      <td><b><code>pocok repo (remove|rm) &lt;name&gt;</code></b></td>
-      <td>
-        <p>Remove repo from catalog.</p>
-        <p><code>&lt;name&gt;</code> - Name of the catalog.</p>
-      </td>
-    </tr>
-    <tr>
-      <td><b><code>pocok repo branch &lt;branch&gt; [&lt;name&gt;] [-f]</code></b></td>
-      <td>
-        <p>Switch repo branch if it is using GIT.</p>
-        <p><code>&lt;branch&gt;</code> - Name of the branch that should be checked out.</p>
-        <p><code>[&lt;name&gt;]</code> - Name of the catalog.</p>
-        <p><code>[-f]</code> - Force switch.</p>
-      </td>
-    </tr>
-    <tr>
-      <td><b><code>pocok repo branches [&lt;name&gt;]</code></b></td>
-      <td>
-        <p>List all available branches of catalog's GIT repository.</p>
-        <p><code>[&lt;name&gt;]</code> - Name of the catalog.</p>
-      </td>
-    </tr>
-    <tr>
-      <td><b><code>pocok repo push [&lt;name&gt;]</code></b></td>
-      <td>
-        <p>Push changes into catalog's remote GIT repository.</p>
-        <p><code>[&lt;name&gt;]</code> - Name of the catalog.</p>
-      </td>
-    </tr>
-    <tr>
-      <td><b><code>pocok repo ls</code></b></td>
-      <td>
-        <p>List repos available config(s).</p>
-      </td>
-    </tr>
-    </tbody>
-  </thead></thead></table>
-</div>
+        <h1 id="Third-Party-Integrations"><a href="#Third-Party-Integrations" class="headerlink" title="Third Party Integrations"></a>Third Party Integrations</h1><h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p>With Github integration you will be able to list, clone and initialise your Pocok projects directly from Github without additional steps.<br>Add your Github account to your Pocok configuration:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ pocok github add &lt;name&gt; &lt;accessToken&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>&lt;name&gt;</code> - Pocok repo name, for example ‘github’.<br><code>&lt;accessToken&gt;</code> - github access token <a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/" target="_blank" rel="noopener">How to create Github Access Token</a>.  </p>
+<p>List your Github projects:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ pocok catalog &lt;name&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>&lt;name&gt;</code> from example ‘github’.</p>
+<p>Run your project:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ pocok up &lt;project name&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>&lt;project name&gt;</code> - Pocok project name</p>
+<h2 id="Gitlab"><a href="#Gitlab" class="headerlink" title="Gitlab"></a>Gitlab</h2><p>With Github integration you will be able to list, clone and initialise your Pocok projects directly from Github without additional steps.<br>Add your Gitlab account to your Pocok configuration:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ pocok gitlab add &lt;name&gt; &lt;personalAccessToken&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>&lt;name&gt;</code> - Pocok repo name, for example ‘gitlab’.<br><code>&lt;personalAccessToken&gt;</code> - gitlab personal access token <a href="https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html" target="_blank" rel="noopener">How to create Gitlab Personal Access Token</a>.</p>
+<p>List your GitLab projects:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ pocok catalog &lt;name&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>&lt;name&gt;</code> from example ‘github’.</p>
+<p>Run your project:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ pocok up &lt;project name&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>&lt;project name&gt;</code> - Pocok project name</p>
 
     </div>
 </main>

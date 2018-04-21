@@ -34,3 +34,8 @@ https://kubernetes.io/docs/tasks/tools/install-kubectl/
 ```
 pip install pocok
 ```
+
+#### Update Pocok
+```
+pip install -U pocok
+```
