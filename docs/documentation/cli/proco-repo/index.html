@@ -7,17 +7,17 @@
     
     <title>Pocok.io</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Pocok helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
+    <meta name="description" content="Proco helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Pocok.io">
-    <meta property="og:url" content="https://pocok.io/">
-    <meta property="og:site_name" content="Pocok.io">
-    <meta property="og:description" content="Pocok helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
+    <meta property="og:title" content="Proco.app">
+    <meta property="og:url" content="https://proco.app/">
+    <meta property="og:site_name" content="Proco.app">
+    <meta property="og:description" content="Proco helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
     <meta property="og:locale" content="en">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Pocok.io">
-    <meta name="twitter:description" content="Pocok helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
-    <meta name="twitter:site" content="Pocok.io">
+    <meta name="twitter:title" content="Proco.app">
+    <meta name="twitter:description" content="Proco helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
+    <meta name="twitter:site" content="Proco.io">
 
     
     <link rel="icon" href="/assets/images/favicon.png">
@@ -113,13 +113,13 @@
         <h3 class="sidebar__group-title">CLI</h3>
         <ul class="sidebar__list">
             <li class="sidebar__list-item">
-                <a class="sidebar__link" href="/documentation/cli/pocok">Pocok</a>
+                <a class="sidebar__link" href="/documentation/cli/proco">Proco</a>
             </li>
             <li class="sidebar__list-item">
-                <a class="sidebar__link" href="/documentation/cli/pocok-project">Pocok Project</a>
+                <a class="sidebar__link" href="/documentation/cli/proco-project">Proco Project</a>
             </li>
             <li class="sidebar__list-item">
-                <a class="sidebar__link" href="/documentation/cli/pocok-repo">Pocok Repo</a>
+                <a class="sidebar__link" href="/documentation/cli/proco-repo">Proco Repo</a>
             </li>
         </ul>
     </div>
@@ -138,123 +138,70 @@
 
 <main class="main">
     <div class="content">
-        <h1 id="Pocok"><a href="#Pocok" class="headerlink" title="Pocok"></a>Pocok</h1>
-<div class="table-wrap"> 
+        <h1 id="Proco-Repo"><a href="#Proco-Repo" class="headerlink" title="Proco Repo"></a>Proco Repo</h1>
+<div class="table-wrap">
   <table>
     <thead>
     <tr>
       <th width="40%"><b>Command</b></th>
       <th width="60%"><b>Description</b></th>
     </tr>
-    </thead>
+    <thead>
     <tbody>
     <tr>
-      <td><b><code>pocok init [&lt;name&gt;]</code></b></td>
+      <td><b><code>proco repo init</code></b></td>
       <td>
-        <p>Initialize pocok project, pocok.yml and docker-compose.yml will be created if they don't exist.</p>
-        <p><code>[&lt;name&gt;]</code> - Name of the project.</p>
+        <p>Initialize default environment and sample catalog.</p>
       </td>
     </tr>
     <tr>
-      <td><b><code>pocok install [&lt;name&gt;] [&lt;plan&gt;]</code></b></td>
+      <td><b><code>proco repo (add|modify) &lt;name&gt; &lt;git-url&gt; <br> [&lt;branch&gt;] [&lt;file&gt;]</code></b></td>
       <td>
-        <p>Clone projects from a remote repository, run install scripts.</p>
-        <p><code>[&lt;name&gt;]</code> - Name of the project.</p>
-        <p><code>[&lt;plan&gt;]</code> - Name of the project's plan.</p>
+        <p>Add new repo to catalog or modify existing one.</p>
+        <p><code>&lt;name&gt;</code> - Name of the catalogue.</p>
+        <p><code>&lt;git-url&gt;</code> - URL of catalog's GIT repository.</p>
+        <p><code>[&lt;branch&gt;]</code> - Name of the branch that should be checked out. (default : master).</p>
+        <p><code>[&lt;file&gt;]</code> - Name of the catalog file in the repository. (default: poco-catalog.yml).</p>
       </td>
     </tr>
     <tr>
-      <td><b><code>pocok (start|up) [&lt;name&gt;] [&lt;plan&gt;]</code></b></td>
+      <td><b><code>proco repo (remove|rm) &lt;name&gt;</code></b></td>
       <td>
-        <p>Start poco project with the default or defined plan.</p>
-        <p><code>[&lt;name&gt;]</code> - Name of the project.</p>
-        <p><code>[&lt;plan&gt;]</code> - Name of the project's plan.</p>
+        <p>Remove repo from catalog.</p>
+        <p><code>&lt;name&gt;</code> - Name of the catalog.</p>
       </td>
     </tr>
     <tr>
-      <td><b><code>pocok (stop|down) [&lt;name&gt;] [&lt;plan&gt;]</code></b></td>
+      <td><b><code>proco repo branch &lt;branch&gt; [&lt;name&gt;] [-f]</code></b></td>
       <td>
-        <p>Stop project with the default or defined plan.</p>
-        <p><code>[&lt;name&gt;]</code> - Name of the project.</p>
-        <p><code>[&lt;plan&gt;]</code> - Name of the project's plan.</p>
+        <p>Switch repo branch if it is using GIT.</p>
+        <p><code>&lt;branch&gt;</code> - Name of the branch that should be checked out.</p>
+        <p><code>[&lt;name&gt;]</code> - Name of the catalog.</p>
+        <p><code>[-f]</code> - Force switch.</p>
       </td>
     </tr>
     <tr>
-      <td><b><code>pocok restart [&lt;name&gt;] [&lt;plan&gt;]</code></b></td>
+      <td><b><code>proco repo branches [&lt;name&gt;]</code></b></td>
       <td>
-        <p>Restart project with the default or defined plan.</p>
-        <p><code>[&lt;name&gt;]</code> - Name of the project.</p>
-        <p><code>[&lt;plan&gt;]</code> - Name of the project's plan.</p>
+        <p>List all available branches of catalog's GIT repository.</p>
+        <p><code>[&lt;name&gt;]</code> - Name of the catalog.</p>
       </td>
     </tr>
     <tr>
-      <td><b><code>pocok (log|logs) [&lt;name&gt;] [&lt;plan&gt;]</code></b></td>
+      <td><b><code>proco repo push [&lt;name&gt;]</code></b></td>
       <td>
-        <p>Print docker containers logs of the current project with the default or defined plan.</p>
-        <p><code>[&lt;name&gt;]</code> - Name of the project.</p>
-        <p><code>[&lt;plan&gt;]</code> - Name of the project's plan.</p>
+        <p>Push changes into catalog's remote GIT repository.</p>
+        <p><code>[&lt;name&gt;]</code> - Name of the catalog.</p>
       </td>
     </tr>
     <tr>
-      <td><b><code>pocok build [&lt;name&gt;] [&lt;plan&gt;]</code></b></td>
+      <td><b><code>proco repo ls</code></b></td>
       <td>
-        <p>Build containers depends defined project and plan.</p>
-        <p><code>[&lt;name&gt;]</code> - Name of the project.</p>
-        <p><code>[&lt;plan&gt;]</code> - Name of the project's plan.</p>
+        <p>List repos available config(s).</p>
       </td>
-    </tr>
-    <tr>
-      <td><b><code>pocok ps [&lt;name&gt;] [&lt;plan&gt;]</code></b></td>
-      <td>
-        <p>Print containers statuses which depends defined project and plan.</p>
-        <p><code>[&lt;name&gt;]</code> - Name of the project.</p>
-        <p><code>[&lt;plan&gt;]</code> - Name of the project's plan.</p>
-      </td>
-    </tr>
-    <tr>
-      <td><b><code>pocok plan ls [&lt;name&gt;]</code></b></td>
-      <td>
-        <p>Print all available plans of the project.</p>
-        <p><code>[&lt;name&gt;]</code> - Name of the project.</p>
-      </td>
-    </tr>
-    <tr>
-      <td><b><code>pocok pull [&lt;name&gt;] [&lt;plan&gt;]</code></b></td>
-      <td>
-        <p>Pull all necessary images for the project with the defined or default plan.</p>
-        <p><code>[&lt;name&gt;]</code> - Name of the project.</p>
-        <p><code>[&lt;plan&gt;]</code> - Name of the project's plan.</p>
-      </td>
-    </tr>
-    <tr>
-      <td><b><code>pocok branches [&lt;name&gt;]</code></b></td>
-      <td>
-        <p>List all available git branches of the project.</p>
-        <p><code>[&lt;name&gt;]</code> - Name of the project.</p>
-      </td>
-    </tr>
-    <tr>
-      <td><b><code>pocok pack [&lt;name&gt;] [&lt;plan&gt;]</code></b></td>
-      <td>
-        <p>Pack the selected project's plan configuration with docker images into an archive.</p>
-        <p><code>[&lt;name&gt;]</code> - Name of the project.</p>
-        <p><code>[&lt;plan&gt;]</code> - Name of the project's plan.</p>
-      </td>
-    </tr>
-    <tr>
-      <td><b><code>pocok unpack [&lt;name&gt;]</code></b></td>
-      <td>
-        <p>Unpack archive, install images to local repository.</p>
-        <p><code>[&lt;name&gt;]</code> - Name of the project.</p>
-        <p><code>[&lt;plan&gt;]</code> - Name of the project's plan.</p>
-      </td>
-    </tr>
-    <tr>
-      <td><b><code>pocok clean</code></b></td>
-      <td><p>Clean all containers and images from the local Docker repository.</p></td>
     </tr>
     </tbody>
-  </table>
+  </thead></thead></table>
 </div>
 
     </div>
@@ -267,7 +214,7 @@
         <div class="footer__container container">
             
             <div class="footer__col">
-                <a class="footer__container-link" href="https://github.com/shiwaforce/pocok/releases" target="_blank" rel="noopener">
+                <a class="footer__container-link" href="https://github.com/shiwaforce/proco/releases" target="_blank" rel="noopener">
                     <div class="footer__container-icon">
                         <img src="/assets/images/icon-flag.svg" alt="">
                     </div>
@@ -278,13 +225,13 @@
                 </a>
             </div>
             <div class="footer__col">
-                <a class="footer__container-link" href="https://github.com/shiwaforce/pocok" target="_blank" rel="noopener">
+                <a class="footer__container-link" href="https://github.com/shiwaforce/proco" target="_blank" rel="noopener">
                     <div class="footer__container-icon">
                         <img src="/assets/images/icon-pocok-small.svg" alt="">
                     </div>
                     <div>
-                        <h4 class="footer__title">Pocok on Github</h4>
-                        <p>Pocok is free and open source, check it on github and help to make it even more better.</p>
+                        <h4 class="footer__title">Proco on Github</h4>
+                        <p>Proco is free and open source, check it on github and help to make it even more better.</p>
                     </div>
                 </a>
             </div>

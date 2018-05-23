@@ -1,9 +1,9 @@
 ---
-title: Pocok Hello World
+title: Proco Hello World
 ---
 
-# Pocok Hello World
-In this tutorial we will create Pocok Project, add it to our Pocok Repo, 
+# Proco Hello World
+In this tutorial we will create Proco Project, add it to our Proco Repo, 
 for this we will use simple nginx to serve our source html. 
 
 
@@ -11,8 +11,8 @@ for this we will use simple nginx to serve our source html.
 
 Before we start lets init git repository:
 ```
-$:~ mkdir pocok-hello-world
-$:~ cd pocok-hello-world
+$:~ mkdir proco-hello-world
+$:~ cd proco-hello-world
 $:~ git init
 ```
 
@@ -92,9 +92,9 @@ services:
 ```
 
 
-### Step 5: Configure Pocok Project
+### Step 5: Configure Proco Project
 
-When docker compose is ready we can add it to our `pocok.yaml`:
+When docker compose is ready we can add it to our `proco.yaml`:
 ```
 version: '1.0'
 
@@ -108,17 +108,17 @@ plan:
 
 Finally we can check our project:
 ```
-$:~ pocok up
+$:~ proco up
 ```
 Open "http://localhost" in your browser, if everything is ok you should see "Hello World!".
 
     
 
-### Step 7: Create Pocok Repo
+### Step 7: Create Proco Repo
 
-Create remote git repository on Github, Gitlab or Bitbucket, add it to your local Pocok config:
+Create remote git repository on Github, Gitlab or Bitbucket, add it to your local Proco config:
 ```
-$:~ pocok repo add default https://git-repository-url
+$:~ proco repo add default https://git-repository-url
 ```
 If everything is ok you should see something like this:
 ```
@@ -129,7 +129,7 @@ Working directory: /Users/username/workspace
 Mode: None
 Offline: False
 Always update: True
-Config location: /Users/username/.pocok/config
+Config location: /Users/username/.proco/config
 Config:
 -------
 default:
@@ -138,28 +138,28 @@ default:
 ```
 
 
-### Step 8: Add your project to your Pocok Repo
-Now we can add our project to Pocok Repo, run this command in root folder of the project:
+### Step 8: Add your project to your Proco Repo
+Now we can add our project to Proco Repo, run this command in root folder of the project:
 ```
-$:~ pocok project add . default
+$:~ proco project add . default
 ```
-When your project is added you can publish your Pocok Repo:
+When your project is added you can publish your Proco Repo:
 ```
-$:~ pocok repo push
+$:~ proco repo push
 ```
  
 
-#### Pocok Hello World Example Project   
-You can try Pocok Hello World Example project. Just add Pocok Repo:
+#### Proco Hello World Example Project   
+You can try Proco Hello World Example project. Just add Proco Repo:
 ```
-$:~ pocok repo add pocok-examples https://github.com/shiwaforce/pocok-examples.git
+$:~ proco repo add proco-examples https://github.com/shiwaforce/proco-examples.git
 ```
 List out all available projects:
 ```
-$:~ pocok project ls
+$:~ proco project ls
 ```
 
-Run Pocok Hello World Project:
+Run Proco Hello World Project:
 ```
-$:~ pocok up pocok-example-hello-world
+$:~ proco up proco-example-hello-world
 ```

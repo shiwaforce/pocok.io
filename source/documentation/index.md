@@ -3,7 +3,7 @@ title: Overview
 ---
 
 # Overview
-Pocok helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.
+Proco helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.
 
 - Simple. Configure, run and switch between projects with a very simple command line interface.
 - Flexibility. Manage, scale, maintain projects of any complexity with ease.
@@ -14,13 +14,13 @@ Pocok helps to organise and manage Docker, Docker-Compose, Kubernetes projects o
 - Git, SVN support out of the box.
 - Project Catalog, Multiple Catalogues. Create your own project catalog. Organise and your projects without additional tools.
 - Multiple Plans. Create multiple plans for different environments or even environments for demo purposes. Switch between plans (environments) with ease.
-- Simple Config Files. Pocok helps to split config files, so it is easy to maintain and scale them any time.
+- Simple Config Files. Proco helps to split config files, so it is easy to maintain and scale them any time.
 - Script Support (Hooks). Add additional scripts any time.   
 
 
-### Pocok Project
-Pocok project is basically git/svn project. Each Pocok Project should have `pocok.yaml` file and at least one `docker-compose.yaml` file.
-`pocok.yaml` example:
+### Proco Project
+Proco project is basically git/svn project. Each Proco Project should have `proco.yaml` file and at least one `docker-compose.yaml` file.
+`proco.yaml` example:
 ```
 version: '1.0'
 maintainer: 'operations@shiwaforce.com'
@@ -41,8 +41,8 @@ plan:
     - docker/dc-phpmyadmin.yaml # - docker-compose file
 ```
 
-### Pocok Plan
-With Pocok plans you can configure multiple environments (development, production, demo, etc.) in your project
+### Proco Plan
+With Proco plans you can configure multiple environments (development, production, demo, etc.) in your project
 keeping configuration small, easy scalable, maintainable and reusable. 
   
 #### Use Cases:
@@ -51,19 +51,19 @@ keeping configuration small, easy scalable, maintainable and reusable.
 - configure plans for demo purposes with predefined content, so any one in your team could demonstrate any project to the client with easy.
 
 
-### Pocok Repo.
-Pocok Repo - is a collection of Pocok Projects. 
-With the help of Pocok Repo you will be able to organise and manage your projects in a simple way.
-Pocok Repo example:
+### Proco Repo.
+Proco Repo - is a collection of Proco Projects. 
+With the help of Proco Repo you will be able to organise and manage your projects in a simple way.
+Proco Repo example:
 ```
 my-project-1:
-  file: pocok.yaml
+  file: proco.yaml
   git: ssh://git@git-server.com/my-project-1
 my-project-2:
-  file: pocok.yaml
+  file: proco.yaml
   git: ssh://git@git-server.com/my-project-2
 ```
 
 
-### Pocok Catalog
-Pocok Catalog - is a collection of Pocok Repos. Add multiple Pocok Repos form same or different resources.
+### Proco Catalog
+Proco Catalog - is a collection of Proco Repos. Add multiple Proco Repos form same or different resources.

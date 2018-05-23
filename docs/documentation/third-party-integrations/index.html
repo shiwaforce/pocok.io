@@ -7,17 +7,17 @@
     
     <title>Third Party Integrations — Pocok.io</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Pocok helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
+    <meta name="description" content="Proco helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Pocok.io">
-    <meta property="og:url" content="https://pocok.io/">
-    <meta property="og:site_name" content="Pocok.io">
-    <meta property="og:description" content="Pocok helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
+    <meta property="og:title" content="Proco.app">
+    <meta property="og:url" content="https://proco.app/">
+    <meta property="og:site_name" content="Proco.app">
+    <meta property="og:description" content="Proco helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
     <meta property="og:locale" content="en">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Pocok.io">
-    <meta name="twitter:description" content="Pocok helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
-    <meta name="twitter:site" content="Pocok.io">
+    <meta name="twitter:title" content="Proco.app">
+    <meta name="twitter:description" content="Proco helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
+    <meta name="twitter:site" content="Proco.io">
 
     
     <link rel="icon" href="/assets/images/favicon.png">
@@ -113,13 +113,13 @@
         <h3 class="sidebar__group-title">CLI</h3>
         <ul class="sidebar__list">
             <li class="sidebar__list-item">
-                <a class="sidebar__link" href="/documentation/cli/pocok">Pocok</a>
+                <a class="sidebar__link" href="/documentation/cli/proco">Proco</a>
             </li>
             <li class="sidebar__list-item">
-                <a class="sidebar__link" href="/documentation/cli/pocok-project">Pocok Project</a>
+                <a class="sidebar__link" href="/documentation/cli/proco-project">Proco Project</a>
             </li>
             <li class="sidebar__list-item">
-                <a class="sidebar__link" href="/documentation/cli/pocok-repo">Pocok Repo</a>
+                <a class="sidebar__link" href="/documentation/cli/proco-repo">Proco Repo</a>
             </li>
         </ul>
     </div>
@@ -138,18 +138,18 @@
 
 <main class="main">
     <div class="content">
-        <h1 id="Third-Party-Integrations"><a href="#Third-Party-Integrations" class="headerlink" title="Third Party Integrations"></a>Third Party Integrations</h1><h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p>With Github integration you will be able to list, clone and initialise your Pocok projects directly from Github without additional steps.<br>Add your Github account to your Pocok configuration:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ pocok github add &lt;name&gt; &lt;accessToken&gt;</span><br></pre></td></tr></table></figure></p>
-<p><code>&lt;name&gt;</code> - Pocok repo name, for example ‘github’.<br><code>&lt;accessToken&gt;</code> - github access token <a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/" target="_blank" rel="noopener">How to create Github Access Token</a>.  </p>
-<p>List your Github projects:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ pocok catalog &lt;name&gt;</span><br></pre></td></tr></table></figure></p>
+        <h1 id="Third-Party-Integrations"><a href="#Third-Party-Integrations" class="headerlink" title="Third Party Integrations"></a>Third Party Integrations</h1><h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p>With Github integration you will be able to list, clone and initialise your Proco projects directly from Github without additional steps.<br>Add your Github account to your Proco configuration:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ proco github add &lt;name&gt; &lt;accessToken&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>&lt;name&gt;</code> - Proco repo name, for example ‘github’.<br><code>&lt;accessToken&gt;</code> - github access token <a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/" target="_blank" rel="noopener">How to create Github Access Token</a>.  </p>
+<p>List your Github projects:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ proco catalog &lt;name&gt;</span><br></pre></td></tr></table></figure></p>
 <p><code>&lt;name&gt;</code> from example ‘github’.</p>
-<p>Run your project:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ pocok up &lt;project name&gt;</span><br></pre></td></tr></table></figure></p>
-<p><code>&lt;project name&gt;</code> - Pocok project name</p>
-<h2 id="Gitlab"><a href="#Gitlab" class="headerlink" title="Gitlab"></a>Gitlab</h2><p>With Github integration you will be able to list, clone and initialise your Pocok projects directly from Github without additional steps.<br>Add your Gitlab account to your Pocok configuration:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ pocok gitlab add &lt;name&gt; &lt;personalAccessToken&gt;</span><br></pre></td></tr></table></figure></p>
-<p><code>&lt;name&gt;</code> - Pocok repo name, for example ‘gitlab’.<br><code>&lt;personalAccessToken&gt;</code> - gitlab personal access token <a href="https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html" target="_blank" rel="noopener">How to create Gitlab Personal Access Token</a>.</p>
-<p>List your GitLab projects:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ pocok catalog &lt;name&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Run your project:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ proco up &lt;project name&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>&lt;project name&gt;</code> - Proco project name</p>
+<h2 id="Gitlab"><a href="#Gitlab" class="headerlink" title="Gitlab"></a>Gitlab</h2><p>With Github integration you will be able to list, clone and initialise your Proco projects directly from Github without additional steps.<br>Add your Gitlab account to your Proco configuration:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ proco gitlab add &lt;name&gt; &lt;personalAccessToken&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>&lt;name&gt;</code> - Proco repo name, for example ‘gitlab’.<br><code>&lt;personalAccessToken&gt;</code> - gitlab personal access token <a href="https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html" target="_blank" rel="noopener">How to create Gitlab Personal Access Token</a>.</p>
+<p>List your GitLab projects:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ proco catalog &lt;name&gt;</span><br></pre></td></tr></table></figure></p>
 <p><code>&lt;name&gt;</code> from example ‘github’.</p>
-<p>Run your project:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ pocok up &lt;project name&gt;</span><br></pre></td></tr></table></figure></p>
-<p><code>&lt;project name&gt;</code> - Pocok project name</p>
+<p>Run your project:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ proco up &lt;project name&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>&lt;project name&gt;</code> - Proco project name</p>
 
     </div>
 </main>
@@ -161,7 +161,7 @@
         <div class="footer__container container">
             
             <div class="footer__col">
-                <a class="footer__container-link" href="https://github.com/shiwaforce/pocok/releases" target="_blank" rel="noopener">
+                <a class="footer__container-link" href="https://github.com/shiwaforce/proco/releases" target="_blank" rel="noopener">
                     <div class="footer__container-icon">
                         <img src="/assets/images/icon-flag.svg" alt="">
                     </div>
@@ -172,13 +172,13 @@
                 </a>
             </div>
             <div class="footer__col">
-                <a class="footer__container-link" href="https://github.com/shiwaforce/pocok" target="_blank" rel="noopener">
+                <a class="footer__container-link" href="https://github.com/shiwaforce/proco" target="_blank" rel="noopener">
                     <div class="footer__container-icon">
                         <img src="/assets/images/icon-pocok-small.svg" alt="">
                     </div>
                     <div>
-                        <h4 class="footer__title">Pocok on Github</h4>
-                        <p>Pocok is free and open source, check it on github and help to make it even more better.</p>
+                        <h4 class="footer__title">Proco on Github</h4>
+                        <p>Proco is free and open source, check it on github and help to make it even more better.</p>
                     </div>
                 </a>
             </div>

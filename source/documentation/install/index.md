@@ -1,8 +1,8 @@
 ---
 title: Install
 ---
-# Install Pocok
-Before installing Pocok Git, Python, Pip and Docker should be installed.
+# Install Proco
+Before installing Proco Git, Python, Pip and Docker should be installed.
 
 **Supported platforms:**
 - Linux  
@@ -13,7 +13,7 @@ Before installing Pocok Git, Python, Pip and Docker should be installed.
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 #### Install Python
-Both 2.x and 3.x versions of python are supported by Pocok.  
+Both 2.x and 3.x versions of python are supported by Proco.  
 https://www.python.org/downloads/
 
 #### Install Docker
@@ -30,12 +30,12 @@ https://github.com/kubernetes/helm
 Kubectl installation is optional. It is required only for Kubernetes support.
 https://kubernetes.io/docs/tasks/tools/install-kubectl/
 
-#### Install Pocok
+#### Install Proco
 ```
-pip install pocok
+pip install proco
 ```
 
-#### Update Pocok
+#### Update Proco
 ```
-pip install -U pocok
+pip install -U proco
 ```

@@ -7,17 +7,17 @@
     
     <title>Overview — Pocok.io</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Pocok helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
+    <meta name="description" content="Proco helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Pocok.io">
-    <meta property="og:url" content="https://pocok.io/">
-    <meta property="og:site_name" content="Pocok.io">
-    <meta property="og:description" content="Pocok helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
+    <meta property="og:title" content="Proco.app">
+    <meta property="og:url" content="https://proco.app/">
+    <meta property="og:site_name" content="Proco.app">
+    <meta property="og:description" content="Proco helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
     <meta property="og:locale" content="en">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Pocok.io">
-    <meta name="twitter:description" content="Pocok helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
-    <meta name="twitter:site" content="Pocok.io">
+    <meta name="twitter:title" content="Proco.app">
+    <meta name="twitter:description" content="Proco helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.">
+    <meta name="twitter:site" content="Proco.io">
 
     
     <link rel="icon" href="/assets/images/favicon.png">
@@ -113,13 +113,13 @@
         <h3 class="sidebar__group-title">CLI</h3>
         <ul class="sidebar__list">
             <li class="sidebar__list-item">
-                <a class="sidebar__link" href="/documentation/cli/pocok">Pocok</a>
+                <a class="sidebar__link" href="/documentation/cli/proco">Proco</a>
             </li>
             <li class="sidebar__list-item">
-                <a class="sidebar__link" href="/documentation/cli/pocok-project">Pocok Project</a>
+                <a class="sidebar__link" href="/documentation/cli/proco-project">Proco Project</a>
             </li>
             <li class="sidebar__list-item">
-                <a class="sidebar__link" href="/documentation/cli/pocok-repo">Pocok Repo</a>
+                <a class="sidebar__link" href="/documentation/cli/proco-repo">Proco Repo</a>
             </li>
         </ul>
     </div>
@@ -138,7 +138,7 @@
 
 <main class="main">
     <div class="content">
-        <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Pocok helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.</p>
+        <h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Proco helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.</p>
 <ul>
 <li>Simple. Configure, run and switch between projects with a very simple command line interface.</li>
 <li>Flexibility. Manage, scale, maintain projects of any complexity with ease.</li>
@@ -149,18 +149,18 @@
 <li>Git, SVN support out of the box.</li>
 <li>Project Catalog, Multiple Catalogues. Create your own project catalog. Organise and your projects without additional tools.</li>
 <li>Multiple Plans. Create multiple plans for different environments or even environments for demo purposes. Switch between plans (environments) with ease.</li>
-<li>Simple Config Files. Pocok helps to split config files, so it is easy to maintain and scale them any time.</li>
+<li>Simple Config Files. Proco helps to split config files, so it is easy to maintain and scale them any time.</li>
 <li>Script Support (Hooks). Add additional scripts any time.   </li>
 </ul>
-<h3 id="Pocok-Project"><a href="#Pocok-Project" class="headerlink" title="Pocok Project"></a>Pocok Project</h3><p>Pocok project is basically git/svn project. Each Pocok Project should have <code>pocok.yaml</code> file and at least one <code>docker-compose.yaml</code> file.<br><code>pocok.yaml</code> example:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">version: &apos;1.0&apos;</span><br><span class="line">maintainer: &apos;operations@shiwaforce.com&apos;</span><br><span class="line"></span><br><span class="line">environment:</span><br><span class="line">  include: docker/conf.env</span><br><span class="line"></span><br><span class="line">plan:</span><br><span class="line">  demo:</span><br><span class="line">    - docker/dc-nginx.yaml # - docker-compose file </span><br><span class="line">    - docker/dc-mysql-demo.yaml # - docker-compose file</span><br><span class="line">    - docker/dc-node.yaml # - docker-compose file</span><br><span class="line">    - docker/dc-phpmyadmin.yaml # - docker-compose file</span><br><span class="line">  dev:</span><br><span class="line">    - docker/dc-nginx.yaml # - docker-compose file</span><br><span class="line">    - docker/dc-mysql-dev.yaml # - docker-compose file</span><br><span class="line">    - docker/dc-node.yaml # - docker-compose file</span><br><span class="line">    - docker/dc-phpmyadmin.yaml # - docker-compose file</span><br></pre></td></tr></table></figure></p>
-<h3 id="Pocok-Plan"><a href="#Pocok-Plan" class="headerlink" title="Pocok Plan"></a>Pocok Plan</h3><p>With Pocok plans you can configure multiple environments (development, production, demo, etc.) in your project<br>keeping configuration small, easy scalable, maintainable and reusable. </p>
+<h3 id="Proco-Project"><a href="#Proco-Project" class="headerlink" title="Proco Project"></a>Proco Project</h3><p>Proco project is basically git/svn project. Each Proco Project should have <code>proco.yaml</code> file and at least one <code>docker-compose.yaml</code> file.<br><code>proco.yaml</code> example:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">version: &apos;1.0&apos;</span><br><span class="line">maintainer: &apos;operations@shiwaforce.com&apos;</span><br><span class="line"></span><br><span class="line">environment:</span><br><span class="line">  include: docker/conf.env</span><br><span class="line"></span><br><span class="line">plan:</span><br><span class="line">  demo:</span><br><span class="line">    - docker/dc-nginx.yaml # - docker-compose file </span><br><span class="line">    - docker/dc-mysql-demo.yaml # - docker-compose file</span><br><span class="line">    - docker/dc-node.yaml # - docker-compose file</span><br><span class="line">    - docker/dc-phpmyadmin.yaml # - docker-compose file</span><br><span class="line">  dev:</span><br><span class="line">    - docker/dc-nginx.yaml # - docker-compose file</span><br><span class="line">    - docker/dc-mysql-dev.yaml # - docker-compose file</span><br><span class="line">    - docker/dc-node.yaml # - docker-compose file</span><br><span class="line">    - docker/dc-phpmyadmin.yaml # - docker-compose file</span><br></pre></td></tr></table></figure></p>
+<h3 id="Proco-Plan"><a href="#Proco-Plan" class="headerlink" title="Proco Plan"></a>Proco Plan</h3><p>With Proco plans you can configure multiple environments (development, production, demo, etc.) in your project<br>keeping configuration small, easy scalable, maintainable and reusable. </p>
 <h4 id="Use-Cases"><a href="#Use-Cases" class="headerlink" title="Use Cases:"></a>Use Cases:</h4><ul>
 <li>useful for large scalable projects or with projects with big number of micro services.</li>
 <li>configure plans (environments) for different groups of developers, so they will be able to run only required services/containers keeping low usage of working machine resources.</li>
 <li>configure plans for demo purposes with predefined content, so any one in your team could demonstrate any project to the client with easy.</li>
 </ul>
-<h3 id="Pocok-Repo"><a href="#Pocok-Repo" class="headerlink" title="Pocok Repo."></a>Pocok Repo.</h3><p>Pocok Repo - is a collection of Pocok Projects.<br>With the help of Pocok Repo you will be able to organise and manage your projects in a simple way.<br>Pocok Repo example:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">my-project-1:</span><br><span class="line">  file: pocok.yaml</span><br><span class="line">  git: ssh://git@git-server.com/my-project-1</span><br><span class="line">my-project-2:</span><br><span class="line">  file: pocok.yaml</span><br><span class="line">  git: ssh://git@git-server.com/my-project-2</span><br></pre></td></tr></table></figure></p>
-<h3 id="Pocok-Catalog"><a href="#Pocok-Catalog" class="headerlink" title="Pocok Catalog"></a>Pocok Catalog</h3><p>Pocok Catalog - is a collection of Pocok Repos. Add multiple Pocok Repos form same or different resources.</p>
+<h3 id="Proco-Repo"><a href="#Proco-Repo" class="headerlink" title="Proco Repo."></a>Proco Repo.</h3><p>Proco Repo - is a collection of Proco Projects.<br>With the help of Proco Repo you will be able to organise and manage your projects in a simple way.<br>Proco Repo example:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">my-project-1:</span><br><span class="line">  file: proco.yaml</span><br><span class="line">  git: ssh://git@git-server.com/my-project-1</span><br><span class="line">my-project-2:</span><br><span class="line">  file: proco.yaml</span><br><span class="line">  git: ssh://git@git-server.com/my-project-2</span><br></pre></td></tr></table></figure></p>
+<h3 id="Proco-Catalog"><a href="#Proco-Catalog" class="headerlink" title="Proco Catalog"></a>Proco Catalog</h3><p>Proco Catalog - is a collection of Proco Repos. Add multiple Proco Repos form same or different resources.</p>
 
     </div>
 </main>
@@ -172,7 +172,7 @@
         <div class="footer__container container">
             
             <div class="footer__col">
-                <a class="footer__container-link" href="https://github.com/shiwaforce/pocok/releases" target="_blank" rel="noopener">
+                <a class="footer__container-link" href="https://github.com/shiwaforce/proco/releases" target="_blank" rel="noopener">
                     <div class="footer__container-icon">
                         <img src="/assets/images/icon-flag.svg" alt="">
                     </div>
@@ -183,13 +183,13 @@
                 </a>
             </div>
             <div class="footer__col">
-                <a class="footer__container-link" href="https://github.com/shiwaforce/pocok" target="_blank" rel="noopener">
+                <a class="footer__container-link" href="https://github.com/shiwaforce/proco" target="_blank" rel="noopener">
                     <div class="footer__container-icon">
                         <img src="/assets/images/icon-pocok-small.svg" alt="">
                     </div>
                     <div>
-                        <h4 class="footer__title">Pocok on Github</h4>
-                        <p>Pocok is free and open source, check it on github and help to make it even more better.</p>
+                        <h4 class="footer__title">Proco on Github</h4>
+                        <p>Proco is free and open source, check it on github and help to make it even more better.</p>
                     </div>
                 </a>
             </div>
