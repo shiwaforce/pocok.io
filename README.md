@@ -1,5 +1,5 @@
-# Pocok.io
-Official Website for [Pocok.io](https://github.com/shiwaforce/pocok)
+# Proco.app
+Official Website for [Proco.app](https://github.com/shiwaforce/proco)
 
 Hexo is used as static generator. Get more info about hexo [https://hexo.io](https://hexo.io)
 
