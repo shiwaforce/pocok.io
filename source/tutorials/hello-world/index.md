@@ -152,7 +152,7 @@ $:~ proco repo push
 #### Proco Hello World Example Project   
 You can try Proco Hello World Example project. Just add Proco Repo:
 ```
-$:~ proco repo add proco-examples https://github.com/shiwaforce/proco-examples.git
+$:~ proco repo add proco-examples git@github.com:shiwaforce/proco-examples.git
 ```
 List out all available projects:
 ```
