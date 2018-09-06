@@ -23,15 +23,12 @@
     <link rel="icon" href="/assets/images/favicon.png">
     
     
-        <link rel="stylesheet" href="/assets/css/index.css">
-        <script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
-        <script src="/assets/js/typewriter.js"></script>
-        <script src="/assets/js/animate.js"></script>
+        <link rel="stylesheet" href="/assets/css/page.css">
     
 </head>
 
-    <body class="🐭 home">
-        <header id="header" class="header header--home">
+    <body class="🐭 ">
+        <header id="header" class="header header--white">
   <div class="container">
     <div class="header__grid">
       <div class="header__col">
@@ -74,6 +71,15 @@
           </ul>
         </nav>
         
+        <button id="toggle-button" class="header__sidebar-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        
       </div>
     </div>
   </div>
@@ -81,146 +87,105 @@
 
 
         
-            <section class="hero">
-    <div class="hero__background"></div>
-    <div class="hero__container container">
-        <div class="hero__col">
-            <h1 class="hero__title">Poco</h1>
-            <p class="hero__text">Poco will help you to organise and manage Docker, Docker-Compose,
-                Kubernetes projects of any complexity using simple YAML config files
-                to shorten the route from finding your project to initialising it in your local environment.</p>
-            <div class="hero__buttons">
-                <a class="hero__button hero__button--primary" href="/documentation/install">Get Started</a>
-                <a class="hero__button hero__button--secondary" href="/documentation">Documentation</a>
-            </div>
-        </div>
-        <div class="hero__col">
-            <div class="terminal">
-                <div class="terminal__controls">
-                    <div class="terminal__control terminal__control--close"></div>
-                    <div class="terminal__control terminal__control--hide"></div>
-                    <div class="terminal__control terminal__control--full"></div>
-                </div>
-
-                <div class="terminal-header">
-                    <p id="terminal" class="terminal__text"></p>
-                </div>
-            </div>
-        </div>
+        <div id="main" class="container container--sidebar">
+            
+<aside id="sidebar" class="sidebar">
+    <div class="sidebar__group">
+        <h3 class="sidebar__group-title">Getting Started</h3>
+        <ul class="sidebar__list">
+            <li class="sidebar__list-item">
+                <a class="sidebar__link" href="/documentation">Overview</a>
+            </li>
+            <li class="sidebar__list-item">
+                <a class="sidebar__link" href="/documentation/install">Install</a>
+            </li>
+            <li class="sidebar__list-item">
+                <a class="sidebar__link" href="/documentation/third-party-integrations">Third Party Integrations</a>
+            </li>
+        </ul>
     </div>
-</section>
 
-            <section class="features">
-    <div class="container">
-        <h1 class="features__title">Features</h1>
-        <div class="features__row">
-            <div class="features__item features__item--1-4">
-                <div class="features__item-panel">
-                    <div class="features__item-icon">
-                        <img src="/assets/images/icon-docker.jpg" alt="">
-                    </div>
-                    <h3 class="features__item-title">Docker and Docker Compose</h3>
-                    <p>Docker and Docker Compose are deeply integrated into poco making it much easier to use.</p>
-                </div>
-            </div>
-            <div class="features__item features__item--1-4">
-                <div class="features__item-panel">
-                    <div class="features__item-icon">
-                        <img src="/assets/images/icon-kubernetes.jpg" alt="">
-                    </div>
-                    <h3 class="features__item-title">Kubernetes</h3>
-                    <p>Automate deployment, scale, and management of containerized applications with Kubernetes without leaving poco.</p>
-                </div>
-            </div>
-            <div class="features__item features__item--1-4">
-                <div class="features__item-panel">
-                    <div class="features__item-icon">
-                        <img src="/assets/images/icon-helm.jpg" alt="">
-                    </div>
-                    <h3 class="features__item-title">Helm</h3>
-                    <p>poco will let you manage Kubernetes applications with Helm. Define, install, and upgrade Kubernetes applications of any complexity.</p>
-                </div>
-            </div>
-            <div class="features__item features__item--1-4">
-                <div class="features__item-panel">
-                    <div class="features__item-icon">
-                        <img src="/assets/images/icon-git.jpg" alt="">
-                    </div>
-                    <h3 class="features__item-title">Version Control</h3>
-                    <p>Git and SVN are supported.</p>
-                </div>
-            </div>
-            <div class="features__item features__item--1-4">
-                <div class="features__item-panel">
-                    <div class="features__item-icon">
-                        <img src="/assets/images/icon-github.jpg" alt="">
-                    </div>
-                    <h3 class="features__item-title">Github</h3>
-                    <p>List, clone and initialise your poco projects directly from Github without additional steps.</p>
-                </div>
-            </div>
-            <div class="features__item features__item--1-4">
-                <div class="features__item-panel">
-                    <div class="features__item-icon">
-                        <img src="/assets/images/icon-gitlab.jpg" alt="">
-                    </div>
-                    <h3 class="features__item-title">Gitlab</h3>
-                    <p>List, clone and initialise your poco projects directly from Gitlab without additional steps.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="features__row">
-            <div class="features__item features__item--icon-left features__item--1-3">
-                <div class="features__item-icon">
-                    <img src="/assets/images/icon-arrows.svg" alt="">
-                </div>
-                <h3 class="features__item-title">Simple, Flexible, Scalable</h3>
-                <p>Configure, run and switch between projects with a very simple command line interface.</p>
-            </div>
-            <div class="features__item features__item--icon-left features__item--1-3">
-                 <div class="features__item-icon">
-                     <img src="/assets/images/icon-env.svg" alt="">
-                 </div>
-                 <h3 class="features__item-title">Multiple Plans</h3>
-                 <p>Create multiple plans for different use cases like development, demonstration, production, etc.</p>
-            </div>
-            <div class="features__item features__item--icon-left features__item--1-3">
-                <div class="features__item-icon">
-                    <img src="/assets/images/icon-keyboard.svg" alt="">
-                </div>
-                 <h3 class="features__item-title">Script Support (Hooks)</h3>
-                <p>Run additional scripts with hooks any time.</p>
-            </div>
-            <div class="features__item features__item--icon-left features__item--1-3">
-                <div class="features__item-icon">
-                    <img src="/assets/images/icon-catalog.svg" alt="">
-                </div>
-                 <h3 class="features__item-title">Projects, Catalogs</h3>
-                <p>Manage as many projects as you need, organize them into catalogs. Share catalogs between different teams or organisations.</p>
-            </div>
-
-        </div>
+    <div class="sidebar__group">
+        <h3 class="sidebar__group-title">CLI</h3>
+        <ul class="sidebar__list">
+            <li class="sidebar__list-item">
+                <a class="sidebar__link" href="/documentation/cli/poco">Poco</a>
+            </li>
+            <li class="sidebar__list-item">
+                <a class="sidebar__link" href="/documentation/cli/poco-project">Poco Project</a>
+            </li>
+            <li class="sidebar__list-item">
+                <a class="sidebar__link" href="/documentation/cli/poco-repo">Poco Repo</a>
+            </li>
+        </ul>
     </div>
-</section>
 
+    <div class="sidebar__group">
+        <h3 class="sidebar__group-title">Tutorials</h3>
+        <ul class="sidebar__list">
+            <li class="sidebar__list-item">
+                <a class="sidebar__link" href="/tutorials/hello-world">Hello World</a>
+            </li>
+        </ul>
+    </div>
+
+    <button id="sidebar-close" class="sidebar__close"></button>
+</aside>
+
+
+<main class="main">
+    <div class="content">
+        <h1 id="Proco-Project"><a href="#Proco-Project" class="headerlink" title="Proco Project"></a>Proco Project</h1>
+<div class="table-wrap">
+  <table>
+    <thead>
+    <tr>
+      <th width="40%"><b>Command</b></th>
+      <th width="60%"><b>Description</b></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><b><code>poco project add [&lt;target-dir&gt;] [&lt;catalog&gt;]</code></b></td>
+      <td>
+        <p>Add directory to catalog.</p>
+        <p><code>[&lt;target-dir&gt;]</code> - Target directory that will be added to the catalog. Default is the current directory.</p>
+        <p><code>[&lt;catalog&gt;]</code> - Name of the catalog.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><b><code>poco project init [&lt;project&gt;]</code></b></td>
+      <td>
+        <p>Init default project, example poco.yml and docker-compose.yml files will be created.</p>
+        <p><code>[&lt;project&gt;]</code> - Name of the project that will be added to the catalog</p>
+      </td>
+    </tr>
+    <tr>
+      <td><b><code>poco project ls</code></b></td>
+      <td>
+        <p>List all available projects from the catalog(s).</p>
+      </td>
+    </tr>
+    <tr>
+      <td><b><code>poco project (remove|rm) &lt;name&gt;</code></b></td>
+      <td>
+        <p>Remove project from the catalog.</p>
+        <p><code>&lt;name&gt;</code> - Name of the project that will be removed</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+    </div>
+</main>
+        </div>
         
 
         <footer class="footer">
     <div class="footer__content-top">
         <div class="footer__container container">
-            
-            <div class="footer__col">
-                <a class="footer__container-link" href="/documentation">
-                    <div class="footer__container-icon">
-                        <img src="/assets/images/icon-docs.svg" alt="">
-                    </div>
-                    <div>
-                        <h4 class="footer__title">Read The Docs</h4>
-                        <p>Get additional information</p>
-                    </div>
-                </a>
-            </div>
             
             <div class="footer__col">
                 <a class="footer__container-link" href="https://github.com/shiwaforce/poco/releases" target="_blank" rel="noopener">
@@ -257,29 +222,32 @@
 </footer>
 
 
+<script>
+  function toggleClass(element, className){
+    if (!element || !className){
+      return;
+    }
+
+    var classString = element.className, nameIndex = classString.indexOf(className);
+    if (nameIndex === -1) {
+      classString += ' ' + className;
+    }
+    else {
+      classString = classString.substr(0, nameIndex) + classString.substr(nameIndex+className.length);
+    }
+    element.className = classString;
+  }
+
+  document.getElementById('toggle-button').addEventListener('click', function() {
+    toggleClass(document.getElementById('sidebar'), 'is-opened');
+  });
+  document.getElementById('sidebar-close').addEventListener('click', function() {
+    toggleClass(document.getElementById('sidebar'), 'is-opened');
+  });
+</script>
 
 
-        
-            <script>
-                $(function () {
-                    var typewriter = new Typewriter($("#terminal"));
-                    typewriter.setCaret("|");
-                    typewriter.setCaretPeriod(500);
-                    typewriter.setDelay(150, 50);
 
-                    typewriter.setFinalCallback( function() {
-                        $('#terminal').contents()
-                            .filter(function() {
-                                return this.nodeType == 3;
-                            }).remove();
-                        var textNode = typewriter._textNode = document.createTextNode("")
-                        $('#terminal').prepend(textNode);
-                        animate(typewriter);
-                    });
-
-                    animate(typewriter);
-                });
-            </script>
         
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-21745051-31"></script>
         <script>
