@@ -1,4 +1,4 @@
-# Proco Repo
+# Poco Repo
 
 {% raw %}
 <div class="table-wrap">
@@ -11,13 +11,13 @@
     <thead>
     <tbody>
     <tr>
-      <td><b><code>proco repo init</code></b></td>
+      <td><b><code>poco repo init</code></b></td>
       <td>
         <p>Initialize default environment and sample catalog.</p>
       </td>
     </tr>
     <tr>
-      <td><b><code>proco repo (add|modify) &lt;name&gt; &lt;git-url&gt; <br/> [&lt;branch&gt;] [&lt;file&gt;]</code></b></td>
+      <td><b><code>poco repo (add|modify) &lt;name&gt; &lt;git-url&gt; <br/> [&lt;branch&gt;] [&lt;file&gt;]</code></b></td>
       <td>
         <p>Add new repo to catalog or modify existing one.</p>
         <p><code>&lt;name&gt;</code> - Name of the catalogue.</p>
@@ -27,14 +27,14 @@
       </td>
     </tr>
     <tr>
-      <td><b><code>proco repo (remove|rm) &lt;name&gt;</code></b></td>
+      <td><b><code>poco repo (remove|rm) &lt;name&gt;</code></b></td>
       <td>
         <p>Remove repo from catalog.</p>
         <p><code>&lt;name&gt;</code> - Name of the catalog.</p>
       </td>
     </tr>
     <tr>
-      <td><b><code>proco repo branch &lt;branch&gt; [&lt;name&gt;] [-f]</code></b></td>
+      <td><b><code>poco repo branch &lt;branch&gt; [&lt;name&gt;] [-f]</code></b></td>
       <td>
         <p>Switch repo branch if it is using GIT.</p>
         <p><code>&lt;branch&gt;</code> - Name of the branch that should be checked out.</p>
@@ -43,21 +43,21 @@
       </td>
     </tr>
     <tr>
-      <td><b><code>proco repo branches [&lt;name&gt;]</code></b></td>
+      <td><b><code>poco repo branches [&lt;name&gt;]</code></b></td>
       <td>
         <p>List all available branches of catalog's GIT repository.</p>
         <p><code>[&lt;name&gt;]</code> - Name of the catalog.</p>
       </td>
     </tr>
     <tr>
-      <td><b><code>proco repo push [&lt;name&gt;]</code></b></td>
+      <td><b><code>poco repo push [&lt;name&gt;]</code></b></td>
       <td>
         <p>Push changes into catalog's remote GIT repository.</p>
         <p><code>[&lt;name&gt;]</code> - Name of the catalog.</p>
       </td>
     </tr>
     <tr>
-      <td><b><code>proco repo ls</code></b></td>
+      <td><b><code>poco repo ls</code></b></td>
       <td>
         <p>List repos available config(s).</p>
       </td>

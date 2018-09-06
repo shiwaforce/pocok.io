@@ -3,7 +3,7 @@ title: Overview
 ---
 
 # Overview
-Proco helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.
+Poco helps to organise and manage Docker, Docker-Compose, Kubernetes projects of any complexity using simple YAML config files to shorten the route from finding your project to initialising it in your local environment.
 
 - Simple. Configure, run and switch between projects with a very simple command line interface.
 - Flexibility. Manage, scale, maintain projects of any complexity with ease.
@@ -14,13 +14,13 @@ Proco helps to organise and manage Docker, Docker-Compose, Kubernetes projects o
 - Git, SVN support out of the box.
 - Project Catalog, Multiple Catalogues. Create your own project catalog. Organise and your projects without additional tools.
 - Multiple Plans. Create multiple plans for different environments or even environments for demo purposes. Switch between plans (environments) with ease.
-- Simple Config Files. Proco helps to split config files, so it is easy to maintain and scale them any time.
+- Simple Config Files. Poco helps to split config files, so it is easy to maintain and scale them any time.
 - Script Support (Hooks). Add additional scripts any time.   
 
 
-### Proco Project
-Proco project is basically git/svn project. Each Proco Project should have `proco.yaml` file and at least one `docker-compose.yaml` file.
-`proco.yaml` example:
+### Poco Project
+Poco project is basically git/svn project. Each Poco Project should have `poco.yaml` file and at least one `docker-compose.yaml` file.
+`poco.yaml` example:
 ```
 version: '1.0'
 maintainer: 'operations@shiwaforce.com'
@@ -41,8 +41,8 @@ plan:
     - docker/dc-phpmyadmin.yaml # - docker-compose file
 ```
 
-### Proco Plan
-With Proco plans you can configure multiple environments (development, production, demo, etc.) in your project
+### Poco Plan
+With Poco plans you can configure multiple environments (development, production, demo, etc.) in your project
 keeping configuration small, easy scalable, maintainable and reusable. 
   
 #### Use Cases:
@@ -51,19 +51,19 @@ keeping configuration small, easy scalable, maintainable and reusable.
 - configure plans for demo purposes with predefined content, so any one in your team could demonstrate any project to the client with easy.
 
 
-### Proco Repo.
-Proco Repo - is a collection of Proco Projects. 
-With the help of Proco Repo you will be able to organise and manage your projects in a simple way.
-Proco Repo example:
+### Poco Repo.
+Poco Repo - is a collection of Poco Projects. 
+With the help of Poco Repo you will be able to organise and manage your projects in a simple way.
+Poco Repo example:
 ```
 my-project-1:
-  file: proco.yaml
+  file: poco.yaml
   git: ssh://git@git-server.com/my-project-1
 my-project-2:
-  file: proco.yaml
+  file: poco.yaml
   git: ssh://git@git-server.com/my-project-2
 ```
 
 
-### Proco Catalog
-Proco Catalog - is a collection of Proco Repos. Add multiple Proco Repos form same or different resources.
+### Poco Catalog
+Poco Catalog - is a collection of Poco Repos. Add multiple Poco Repos form same or different resources.

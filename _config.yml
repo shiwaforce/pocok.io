@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://pocok.io
+url: https://poco.io
 root: /
 permalink: :title/
 permalink_defaults:
@@ -42,12 +42,12 @@ highlight:
   line_number: false
   auto_detect: false
   tab_replace:
-  
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -68,7 +68,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: pocok
+theme: poco
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

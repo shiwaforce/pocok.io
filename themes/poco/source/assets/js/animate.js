@@ -7,11 +7,11 @@ function animate(typewriter) {
             delayAfter: 500
         },
         {
-            text: "proco init my-project\n",
+            text: "poco init my-project\n",
             delayAfter: 500
         },
         {
-            text: "proco.yaml created\ndocker-compose.yaml created\nProject init completed!\n",
+            text: "poco.yaml created\ndocker-compose.yaml created\nProject init completed!\n",
             instant: true,
             delayAfter: 500
         },
@@ -21,7 +21,7 @@ function animate(typewriter) {
             delayAfter: 500
         },
         {
-            text: "proco up\n",
+            text: "poco up\n",
             delayAfter: 1000
         },
         {

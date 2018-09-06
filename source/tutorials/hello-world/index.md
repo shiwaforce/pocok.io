@@ -1,9 +1,9 @@
 ---
-title: Proco Hello World
+title: Poco Hello World
 ---
 
-# Proco Hello World
-In this tutorial we will create Proco Project, add it to our Proco Repo, 
+# Poco Hello World
+In this tutorial we will create Poco Project, add it to our Poco Repo, 
 for this we will use simple nginx to serve our source html. 
 
 
@@ -11,8 +11,8 @@ for this we will use simple nginx to serve our source html.
 
 Before we start lets init git repository:
 ```
-$:~ mkdir proco-hello-world
-$:~ cd proco-hello-world
+$:~ mkdir poco-hello-world
+$:~ cd poco-hello-world
 $:~ git init
 ```
 
@@ -92,9 +92,9 @@ services:
 ```
 
 
-### Step 5: Configure Proco Project
+### Step 5: Configure Poco Project
 
-When docker compose is ready we can add it to our `proco.yaml`:
+When docker compose is ready we can add it to our `poco.yaml`:
 ```
 version: '1.0'
 
@@ -108,17 +108,17 @@ plan:
 
 Finally we can check our project:
 ```
-$:~ proco up
+$:~ poco up
 ```
 Open "http://localhost" in your browser, if everything is ok you should see "Hello World!".
 
     
 
-### Step 7: Create Proco Repo
+### Step 7: Create Poco Repo
 
-Create remote git repository on Github, Gitlab or Bitbucket, add it to your local Proco config:
+Create remote git repository on Github, Gitlab or Bitbucket, add it to your local Poco config:
 ```
-$:~ proco repo add default https://git-repository-url
+$:~ poco repo add default https://git-repository-url
 ```
 If everything is ok you should see something like this:
 ```
@@ -129,7 +129,7 @@ Working directory: /Users/username/workspace
 Mode: None
 Offline: False
 Always update: True
-Config location: /Users/username/.proco/config
+Config location: /Users/username/.poco/config
 Config:
 -------
 default:
@@ -138,28 +138,28 @@ default:
 ```
 
 
-### Step 8: Add your project to your Proco Repo
-Now we can add our project to Proco Repo, run this command in root folder of the project:
+### Step 8: Add your project to your Poco Repo
+Now we can add our project to Poco Repo, run this command in root folder of the project:
 ```
-$:~ proco project add . default
+$:~ poco project add . default
 ```
-When your project is added you can publish your Proco Repo:
+When your project is added you can publish your Poco Repo:
 ```
-$:~ proco repo push
+$:~ poco repo push
 ```
  
 
-#### Proco Hello World Example Project   
-You can try Proco Hello World Example project. Just add Proco Repo:
+#### Poco Hello World Example Project   
+You can try Poco Hello World Example project. Just add Poco Repo:
 ```
-$:~ proco repo add proco-examples git@github.com:shiwaforce/proco-examples.git
+$:~ poco repo add poco-examples git@github.com:shiwaforce/poco-examples.git
 ```
 List out all available projects:
 ```
-$:~ proco project ls
+$:~ poco project ls
 ```
 
-Run Proco Hello World Project:
+Run Poco Hello World Project:
 ```
-$:~ proco up proco-example-hello-world
+$:~ poco up poco-example-hello-world
 ```
