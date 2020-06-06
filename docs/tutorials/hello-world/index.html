@@ -2,7 +2,7 @@
 
 <!doctype html>
 <html lang="en">
-    <head><meta name="generator" content="Hexo 3.9.0">
+    <head>
     <meta charset="utf-8">
     
     <title>Poco Hello World — getpoco.io</title>
@@ -23,9 +23,11 @@
     <link rel="icon" href="/assets/images/favicon.png">
     
     
-        <link rel="stylesheet" href="/assets/css/page.css">
+        
+<link rel="stylesheet" href="/assets/css/page.css">
+
     
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
     <body class="🐭 ">
         <header id="header" class="header header--white">
@@ -136,21 +138,52 @@
 <main class="main">
     <div class="content">
         <h1 id="Poco-Hello-World"><a href="#Poco-Hello-World" class="headerlink" title="Poco Hello World"></a>Poco Hello World</h1><p>In this tutorial we will create Poco Project, add it to our Poco Repo,<br>for this we will use simple nginx to serve our source html. </p>
-<h3 id="Step-1-Init-Git-Repository"><a href="#Step-1-Init-Git-Repository" class="headerlink" title="Step 1: Init Git Repository"></a>Step 1: Init Git Repository</h3><p>Before we start lets init git repository:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ mkdir poco-hello-world</span><br><span class="line">$:~ cd poco-hello-world</span><br><span class="line">$:~ git init</span><br></pre></td></tr></table></figure></p>
-<h3 id="Step-2-Add-source-files"><a href="#Step-2-Add-source-files" class="headerlink" title="Step 2: Add source files"></a>Step 2: Add source files</h3><p>When git repository is ready lets add some source files to our project first,<br>so we will be able to see that our ngnix server is workink correctly.<br>Create <code>index.html</code> file inside <code>/source/www</code> folder:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;meta name=&quot;viewport&quot;</span><br><span class="line">        content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</span><br><span class="line">  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">  &lt;title&gt;Hello World!&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;h1&gt;Hello World!&lt;/h1&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="Step-3-Configure-Docker-Compose"><a href="#Step-3-Configure-Docker-Compose" class="headerlink" title="Step 3: Configure Docker Compose"></a>Step 3: Configure Docker Compose</h3><p>We recommend to split docker-compose files by services (one file - one service),<br>this will help to make project more flexible.<br>Create <code>dc-nginx.yaml</code> file inside <code>/docker</code> folder and map our source folder:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">version: &apos;3&apos;</span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line">  nginx:</span><br><span class="line">    image: nginx:alpine</span><br><span class="line">    ports:</span><br><span class="line">      - 80:80</span><br><span class="line">    volumes:</span><br><span class="line">      - ../source/www:/var/www</span><br></pre></td></tr></table></figure></p>
-<h3 id="Step-4-Configure-Nginx-server"><a href="#Step-4-Configure-Nginx-server" class="headerlink" title="Step 4: Configure Nginx server"></a>Step 4: Configure Nginx server</h3><p>Let’s adjust a little bit our nginx server so it better suit to our needs.<br>Create <code>nginx.conf</code> file in <code>/docker/config</code>:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">events &#123;</span><br><span class="line">  worker_connections  4096;  ### Default: 1024</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">  server &#123;</span><br><span class="line">    root /var/www;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>To tell our nginx server to use our config file we need to map it in our <code>/dockder/dc-nginx.yaml</code> file:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">version: &apos;3&apos;</span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line">  nginx:</span><br><span class="line">    image: nginx:alpine</span><br><span class="line">    ports:</span><br><span class="line">      - 80:80</span><br><span class="line">    volumes:</span><br><span class="line">      - ./config/nginx.conf:/etc/nginx/nginx.conf:ro</span><br><span class="line">      - ../source/www:/var/www</span><br></pre></td></tr></table></figure></p>
-<h3 id="Step-5-Configure-Poco-Project"><a href="#Step-5-Configure-Poco-Project" class="headerlink" title="Step 5: Configure Poco Project"></a>Step 5: Configure Poco Project</h3><p>When docker compose is ready we can add it to our <code>poco.yaml</code>:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">version: &apos;1.0&apos;</span><br><span class="line"></span><br><span class="line">plan:</span><br><span class="line">  default:</span><br><span class="line">    - docker/dc-nginx.yaml</span><br></pre></td></tr></table></figure></p>
-<h3 id="Step-6-Check-your-project"><a href="#Step-6-Check-your-project" class="headerlink" title="Step 6: Check your project"></a>Step 6: Check your project</h3><p>Finally we can check our project:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ poco up</span><br></pre></td></tr></table></figure></p>
+<h3 id="Step-1-Init-Git-Repository"><a href="#Step-1-Init-Git-Repository" class="headerlink" title="Step 1: Init Git Repository"></a>Step 1: Init Git Repository</h3><p>Before we start lets init git repository:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ mkdir poco-hello-world</span><br><span class="line">$:~ cd poco-hello-world</span><br><span class="line">$:~ git init</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Step-2-Add-source-files"><a href="#Step-2-Add-source-files" class="headerlink" title="Step 2: Add source files"></a>Step 2: Add source files</h3><p>When git repository is ready lets add some source files to our project first,<br>so we will be able to see that our ngnix server is workink correctly.<br>Create <code>index.html</code> file inside <code>/source/www</code> folder:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;meta name&#x3D;&quot;viewport&quot;</span><br><span class="line">        content&#x3D;&quot;width&#x3D;device-width, user-scalable&#x3D;no, initial-scale&#x3D;1.0, maximum-scale&#x3D;1.0, minimum-scale&#x3D;1.0&quot;&gt;</span><br><span class="line">  &lt;meta http-equiv&#x3D;&quot;X-UA-Compatible&quot; content&#x3D;&quot;ie&#x3D;edge&quot;&gt;</span><br><span class="line">  &lt;title&gt;Hello World!&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;h1&gt;Hello World!&lt;&#x2F;h1&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Step-3-Configure-Docker-Compose"><a href="#Step-3-Configure-Docker-Compose" class="headerlink" title="Step 3: Configure Docker Compose"></a>Step 3: Configure Docker Compose</h3><p>We recommend to split docker-compose files by services (one file - one service),<br>this will help to make project more flexible.<br>Create <code>dc-nginx.yaml</code> file inside <code>/docker</code> folder and map our source folder:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">version: &#39;3&#39;</span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line">  nginx:</span><br><span class="line">    image: nginx:alpine</span><br><span class="line">    ports:</span><br><span class="line">      - 80:80</span><br><span class="line">    volumes:</span><br><span class="line">      - ..&#x2F;source&#x2F;www:&#x2F;var&#x2F;www</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Step-4-Configure-Nginx-server"><a href="#Step-4-Configure-Nginx-server" class="headerlink" title="Step 4: Configure Nginx server"></a>Step 4: Configure Nginx server</h3><p>Let’s adjust a little bit our nginx server so it better suit to our needs.<br>Create <code>nginx.conf</code> file in <code>/docker/config</code>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">events &#123;</span><br><span class="line">  worker_connections  4096;  ### Default: 1024</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">  server &#123;</span><br><span class="line">    root &#x2F;var&#x2F;www;</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>To tell our nginx server to use our config file we need to map it in our <code>/dockder/dc-nginx.yaml</code> file:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">version: &#39;3&#39;</span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line">  nginx:</span><br><span class="line">    image: nginx:alpine</span><br><span class="line">    ports:</span><br><span class="line">      - 80:80</span><br><span class="line">    volumes:</span><br><span class="line">      - .&#x2F;config&#x2F;nginx.conf:&#x2F;etc&#x2F;nginx&#x2F;nginx.conf:ro</span><br><span class="line">      - ..&#x2F;source&#x2F;www:&#x2F;var&#x2F;www</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Step-5-Configure-Poco-Project"><a href="#Step-5-Configure-Poco-Project" class="headerlink" title="Step 5: Configure Poco Project"></a>Step 5: Configure Poco Project</h3><p>When docker compose is ready we can add it to our <code>poco.yaml</code>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">version: &#39;1.0&#39;</span><br><span class="line"></span><br><span class="line">plan:</span><br><span class="line">  default:</span><br><span class="line">    - docker&#x2F;dc-nginx.yaml</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Step-6-Check-your-project"><a href="#Step-6-Check-your-project" class="headerlink" title="Step 6: Check your project"></a>Step 6: Check your project</h3><p>Finally we can check our project:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ poco up</span><br></pre></td></tr></table></figure>
 <p>Open “<a href="http://localhost&quot;" target="_blank" rel="noopener">http://localhost&quot;</a> in your browser, if everything is ok you should see “Hello World!”.</p>
-<h3 id="Step-7-Create-Poco-Repo"><a href="#Step-7-Create-Poco-Repo" class="headerlink" title="Step 7: Create Poco Repo"></a>Step 7: Create Poco Repo</h3><p>Create remote git repository on Github, Gitlab or Bitbucket, add it to your local Poco config:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ poco repo add default https://git-repository-url</span><br></pre></td></tr></table></figure></p>
-<p>If everything is ok you should see something like this:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Actual config</span><br><span class="line">-------------</span><br><span class="line">Project name: None</span><br><span class="line">Working directory: /Users/username/workspace</span><br><span class="line">Mode: None</span><br><span class="line">Offline: False</span><br><span class="line">Always update: True</span><br><span class="line">Config location: /Users/username/.poco/config</span><br><span class="line">Config:</span><br><span class="line">-------</span><br><span class="line">default:</span><br><span class="line">    repositoryType: git</span><br><span class="line">    server: https://git-repository-url</span><br></pre></td></tr></table></figure></p>
-<h3 id="Step-8-Add-your-project-to-your-Poco-Repo"><a href="#Step-8-Add-your-project-to-your-Poco-Repo" class="headerlink" title="Step 8: Add your project to your Poco Repo"></a>Step 8: Add your project to your Poco Repo</h3><p>Now we can add our project to Poco Repo, run this command in root folder of the project:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ poco project add . default</span><br></pre></td></tr></table></figure></p>
-<p>When your project is added you can publish your Poco Repo:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ poco repo push</span><br></pre></td></tr></table></figure></p>
-<h4 id="Poco-Hello-World-Example-Project"><a href="#Poco-Hello-World-Example-Project" class="headerlink" title="Poco Hello World Example Project"></a>Poco Hello World Example Project</h4><p>You can try Poco Hello World Example project. Just add Poco Repo:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ poco repo add poco-examples git@github.com:shiwaforce/poco-examples.git</span><br></pre></td></tr></table></figure></p>
-<p>List out all available projects:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ poco project ls</span><br></pre></td></tr></table></figure></p>
-<p>Run Poco Hello World Project:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ poco up poco-example-hello-world</span><br></pre></td></tr></table></figure></p>
+<h3 id="Step-7-Create-Poco-Repo"><a href="#Step-7-Create-Poco-Repo" class="headerlink" title="Step 7: Create Poco Repo"></a>Step 7: Create Poco Repo</h3><p>Create remote git repository on Github, Gitlab or Bitbucket, add it to your local Poco config:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ poco repo add default https:&#x2F;&#x2F;git-repository-url</span><br></pre></td></tr></table></figure>
+<p>If everything is ok you should see something like this:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Actual config</span><br><span class="line">-------------</span><br><span class="line">Project name: None</span><br><span class="line">Working directory: &#x2F;Users&#x2F;username&#x2F;workspace</span><br><span class="line">Mode: None</span><br><span class="line">Offline: False</span><br><span class="line">Always update: True</span><br><span class="line">Config location: &#x2F;Users&#x2F;username&#x2F;.poco&#x2F;config</span><br><span class="line">Config:</span><br><span class="line">-------</span><br><span class="line">default:</span><br><span class="line">    repositoryType: git</span><br><span class="line">    server: https:&#x2F;&#x2F;git-repository-url</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Step-8-Add-your-project-to-your-Poco-Repo"><a href="#Step-8-Add-your-project-to-your-Poco-Repo" class="headerlink" title="Step 8: Add your project to your Poco Repo"></a>Step 8: Add your project to your Poco Repo</h3><p>Now we can add our project to Poco Repo, run this command in root folder of the project:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ poco project add . default</span><br></pre></td></tr></table></figure>
+<p>When your project is added you can publish your Poco Repo:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ poco repo push</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="Poco-Hello-World-Example-Project"><a href="#Poco-Hello-World-Example-Project" class="headerlink" title="Poco Hello World Example Project"></a>Poco Hello World Example Project</h4><p>You can try Poco Hello World Example project. Just add Poco Repo:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ poco repo add poco-examples git@github.com:shiwaforce&#x2F;poco-examples.git</span><br></pre></td></tr></table></figure>
+<p>List out all available projects:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ poco project ls</span><br></pre></td></tr></table></figure>
+
+<p>Run Poco Hello World Project:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$:~ poco up poco-example-hello-world</span><br></pre></td></tr></table></figure>
 
     </div>
 </main>
